@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bob.demo.myo2o.dao.ShopCategoryDao">
+	<resultMap type="com.bob.demo.myo2o.entity.ShopCategory"
+		id="ShopCategoryResultMap">
+		<id column="shop_category_id" property="shopCategoryId" />
+		<result column="shop_category_name" property="shopCategoryName" />
+		<result column="shop_category_desc" property="shopCategoryDesc" />
+		<result column="shop_category_img" property="shopCategoryImg" />
+		<result column="priority" property="priority" />
+		<result column="create_time" property="createTime" />
+		<result column="last_edit_time" property="lastEditTime" />
+		<association property="parent"
+			javaType="com.bob.demo.myo2o.entity.ShopCategory">
+			<id column="parent_id" property="shopCategoryId" />
+		</association>
+	</resultMap>
+	<!-- 新建一条店铺类别 -->
+	<insert id="insertShopCategory"
+		parameterType="com.bob.demo.myo2o.entity.ShopCategory"
+		useGeneratedKeys="true" keyColumn="shop_category_id"
+		keyProperty="shopCategoryId">
+		insert into
+		tb_shop_category
+		(
+		`shop_category_name`,
+		`shop_category_desc`,
+		`shop_category_img`,
+		`priority`,
+		`create_time`,
+		`last_edit_time`,
+		`parent_id`
+		)
+		values
+		(
+		#{shopCategoryName},
+		#{shopCategoryDesc},
+		#{shopCategoryImg},
+		#{priority},
+		#{createTime},
+		#{lastEditTime},
+		#{parent.shopCategoryId}
+		)
+	</insert>
+	<!-- 根据店铺类别条件，查询店铺类别 -->
+	<select id="queryShopCategory"
+		parameterType="com.bob.demo.myo2o.entity.ShopCategory"
+		resultMap="ShopCategoryResultMap">
+	SELECT 	
+	`shop_category_id`, 
+	`shop_category_name`, 
+	`shop_category_desc`, 
+	`shop_category_img`, 
+	`priority`, 
+	`create_time`, 
+	`last_edit_time`, 
+	`parent_id`
+	FROM 
+	`tb_shop_category` 
+	<where>
+		<if test="parent ==null">
+		and parent_id is null
+		</if>
+		<if test="parent !=null">
+		and parent_id is not null
+		</if>
+		<if test="parent !=null
+		and parent.shopCategoryId !=null">
+		and parent_id = #{parent.shopCategoryId}
+		</if>
+	</where>
+	order by
+	priority desc
+	</select>
+	<!-- 根据id查询店铺类别 -->
+	<select id="queryShopCategoryById" parameterType="long" 
+	resultMap="ShopCategoryResultMap">
+	SELECT 	
+	`shop_category_id`, 
+	`shop_category_name`, 
+	`shop_category_desc`, 
+	`shop_category_img`, 
+	`priority`, 
+	`create_time`, 
+	`last_edit_time`, 
+	`parent_id`
+	FROM 
+	`tb_shop_category` 
+	where
+	shop_category_id = #{shopCategoryId}
+	order by
+	priority desc
+	</select>
+	
+</mapper>

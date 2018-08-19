@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bob.demo.myo2o.dao.PersonInfoDao">
+	<resultMap type="com.bob.demo.myo2o.entity.PersonInfo"
+		id="ShopCategoryResultMap">
+		<id column="shop_category_id" property="shopCategoryId" />
+		<result column="shop_category_name" property="shopCategoryName" />
+		<result column="shop_category_desc" property="shopCategoryDesc" />
+		<result column="shop_category_img" property="shopCategoryImg" />
+		<result column="priority" property="priority" />
+		<result column="create_time" property="createTime" />
+		<result column="last_edit_time" property="lastEditTime" />
+		<association property="parent"
+			javaType="com.bob.demo.myo2o.entity.ShopCategory">
+			<id column="parent_id" property="shopCategoryId" />
+		</association>
+	</resultMap>
+	<!-- 新建用户信息 -->
+	<insert id="insertPersonInfo"
+		parameterType="com.bob.demo.myo2o.entity.PersonInfo"
+		useGeneratedKeys="true" keyColumn="person_id" keyProperty="personId">
+	insert into
+	tb_person_info
+	(
+	`person_name`, 
+	`person_img`, 
+	`email`, 
+	`gender`, 
+	`enable_status`, 
+	`person_type`, 
+	`create_time`, 
+	`last_edit_time`
+	)
+	values
+	(
+	#{personName},
+	#{personImg},
+	#{email},
+	#{gender},
+	#{enableStatus},
+	#{personType},
+	#{createTime},
+	#{lastEditTime}
+	)
+	</insert>
+	<!-- 根据id查询personInfo -->
+	<select id="queryPersonInfoById" parameterType="long" 
+	resultType="com.bob.demo.myo2o.entity.PersonInfo">
+	select
+	*
+	from
+	tb_person_info
+	where
+	person_id = #{personInfoId}
+	</select>
+
+</mapper>

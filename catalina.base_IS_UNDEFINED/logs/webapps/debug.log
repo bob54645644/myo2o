@@ -1,0 +1,175 @@
+2018-08-19 16:37:17.207 [main] DEBUG com.bob.demo.myo2o.dao.AreaTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-19 16:38:58.587 [main] DEBUG com.bob.demo.myo2o.dao.AreaTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-19 16:40:58.979 [main] DEBUG com.bob.demo.myo2o.dao.AreaTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-19 16:42:17.056 [main] DEBUG com.bob.demo.myo2o.dao.AreaTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-19 16:42:59.772 [main] DEBUG com.bob.demo.myo2o.dao.AreaTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-19 16:46:04.358 [main] DEBUG com.bob.demo.myo2o.dao.AreaTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-19 16:46:09.659 [main] DEBUG com.bob.demo.myo2o.dao.AreaDao.insertArea - ==>  Preparing: insert into tb_area ( area_name, priority, create_time, last_edit_time ) values ( areaName, priority, createTime, lastEditTime ) 
+2018-08-19 16:46:09.693 [main] DEBUG com.bob.demo.myo2o.dao.AreaDao.insertArea - ==> Parameters: 
+2018-08-19 16:47:12.188 [main] DEBUG com.bob.demo.myo2o.dao.AreaTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-19 16:47:18.192 [main] DEBUG com.bob.demo.myo2o.dao.AreaDao.insertArea - ==>  Preparing: insert into tb_area ( area_name, priority, create_time, last_edit_time ) values ( ?, ?, ?, ? ) 
+2018-08-19 16:47:18.253 [main] DEBUG com.bob.demo.myo2o.dao.AreaDao.insertArea - ==> Parameters: 东苑(String), 4(Integer), 2018-08-19 16:47:17.771(Timestamp), 2018-08-19 16:47:17.771(Timestamp)
+2018-08-19 16:47:18.312 [main] DEBUG com.bob.demo.myo2o.dao.AreaDao.insertArea - <==    Updates: 1
+2018-08-19 17:07:00.527 [main] DEBUG com.bob.demo.myo2o.dao.AreaTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-19 17:07:35.229 [main] DEBUG com.bob.demo.myo2o.dao.AreaTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-19 17:07:42.213 [main] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==>  Preparing: select * from tb_area 
+2018-08-19 17:07:42.274 [main] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==> Parameters: 
+2018-08-19 17:07:42.328 [main] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - <==      Total: 1
+2018-08-19 17:12:10.953 [main] DEBUG com.bob.demo.myo2o.dao.AreaTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-19 17:12:17.450 [main] DEBUG com.bob.demo.myo2o.dao.AreaDao.insertArea - ==>  Preparing: insert into tb_area ( area_name, priority, create_time, last_edit_time ) values ( ?, ?, ?, ? ) 
+2018-08-19 17:12:17.494 [main] DEBUG com.bob.demo.myo2o.dao.AreaDao.insertArea - ==> Parameters: 西苑(String), 3(Integer), 2018-08-19 17:12:16.961(Timestamp), 2018-08-19 17:12:16.961(Timestamp)
+2018-08-19 17:12:17.564 [main] DEBUG com.bob.demo.myo2o.dao.AreaDao.insertArea - <==    Updates: 1
+2018-08-19 17:12:34.499 [main] DEBUG com.bob.demo.myo2o.dao.AreaTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-19 17:12:41.158 [main] DEBUG com.bob.demo.myo2o.dao.AreaDao.insertArea - ==>  Preparing: insert into tb_area ( area_name, priority, create_time, last_edit_time ) values ( ?, ?, ?, ? ) 
+2018-08-19 17:12:41.203 [main] DEBUG com.bob.demo.myo2o.dao.AreaDao.insertArea - ==> Parameters: 南苑(String), 2(Integer), 2018-08-19 17:12:40.682(Timestamp), 2018-08-19 17:12:40.682(Timestamp)
+2018-08-19 17:12:41.319 [main] DEBUG com.bob.demo.myo2o.dao.AreaDao.insertArea - <==    Updates: 1
+2018-08-19 17:22:36.089 [main] DEBUG com.bob.demo.myo2o.service.AreaServiceTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-19 17:22:41.453 [main] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==>  Preparing: select * from tb_area 
+2018-08-19 17:22:41.499 [main] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==> Parameters: 
+2018-08-19 17:22:41.518 [main] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - <==      Total: 3
+2018-08-19 17:30:07.796 [restartedMain] DEBUG com.bob.demo.myo2o.Myo2oApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-19 17:31:33.026 [http-nio-8080-exec-1] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==>  Preparing: select * from tb_area 
+2018-08-19 17:31:33.070 [http-nio-8080-exec-1] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==> Parameters: 
+2018-08-19 17:31:33.091 [http-nio-8080-exec-1] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - <==      Total: 3
+2018-08-19 17:31:40.335 [http-nio-8080-exec-10] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==>  Preparing: select * from tb_area 
+2018-08-19 17:31:40.336 [http-nio-8080-exec-10] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==> Parameters: 
+2018-08-19 17:31:40.338 [http-nio-8080-exec-10] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - <==      Total: 3
+2018-08-19 17:31:40.649 [http-nio-8080-exec-3] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==>  Preparing: select * from tb_area 
+2018-08-19 17:31:40.649 [http-nio-8080-exec-3] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==> Parameters: 
+2018-08-19 17:31:40.651 [http-nio-8080-exec-3] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - <==      Total: 3
+2018-08-19 17:31:40.793 [http-nio-8080-exec-5] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==>  Preparing: select * from tb_area 
+2018-08-19 17:31:40.794 [http-nio-8080-exec-5] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==> Parameters: 
+2018-08-19 17:31:40.795 [http-nio-8080-exec-5] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - <==      Total: 3
+2018-08-19 17:31:41.305 [http-nio-8080-exec-7] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==>  Preparing: select * from tb_area 
+2018-08-19 17:31:41.306 [http-nio-8080-exec-7] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==> Parameters: 
+2018-08-19 17:31:41.308 [http-nio-8080-exec-7] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - <==      Total: 3
+2018-08-19 17:31:41.480 [http-nio-8080-exec-9] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==>  Preparing: select * from tb_area 
+2018-08-19 17:31:41.481 [http-nio-8080-exec-9] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==> Parameters: 
+2018-08-19 17:31:41.484 [http-nio-8080-exec-9] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - <==      Total: 3
+2018-08-19 17:31:41.612 [http-nio-8080-exec-10] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==>  Preparing: select * from tb_area 
+2018-08-19 17:31:41.612 [http-nio-8080-exec-10] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==> Parameters: 
+2018-08-19 17:31:41.615 [http-nio-8080-exec-10] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - <==      Total: 3
+2018-08-19 17:31:41.729 [http-nio-8080-exec-3] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==>  Preparing: select * from tb_area 
+2018-08-19 17:31:41.729 [http-nio-8080-exec-3] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==> Parameters: 
+2018-08-19 17:31:41.731 [http-nio-8080-exec-3] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - <==      Total: 3
+2018-08-19 17:31:41.860 [http-nio-8080-exec-5] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==>  Preparing: select * from tb_area 
+2018-08-19 17:31:41.860 [http-nio-8080-exec-5] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==> Parameters: 
+2018-08-19 17:31:41.862 [http-nio-8080-exec-5] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - <==      Total: 3
+2018-08-19 17:31:41.977 [http-nio-8080-exec-7] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==>  Preparing: select * from tb_area 
+2018-08-19 17:31:41.977 [http-nio-8080-exec-7] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==> Parameters: 
+2018-08-19 17:31:41.980 [http-nio-8080-exec-7] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - <==      Total: 3
+2018-08-19 17:31:42.097 [http-nio-8080-exec-1] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==>  Preparing: select * from tb_area 
+2018-08-19 17:31:42.097 [http-nio-8080-exec-1] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==> Parameters: 
+2018-08-19 17:31:42.098 [http-nio-8080-exec-1] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - <==      Total: 3
+2018-08-19 17:31:42.227 [http-nio-8080-exec-2] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==>  Preparing: select * from tb_area 
+2018-08-19 17:31:42.227 [http-nio-8080-exec-2] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==> Parameters: 
+2018-08-19 17:31:42.228 [http-nio-8080-exec-2] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - <==      Total: 3
+2018-08-19 17:31:42.477 [http-nio-8080-exec-4] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==>  Preparing: select * from tb_area 
+2018-08-19 17:31:42.477 [http-nio-8080-exec-4] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==> Parameters: 
+2018-08-19 17:31:42.478 [http-nio-8080-exec-4] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - <==      Total: 3
+2018-08-19 17:31:42.603 [http-nio-8080-exec-6] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==>  Preparing: select * from tb_area 
+2018-08-19 17:31:42.604 [http-nio-8080-exec-6] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==> Parameters: 
+2018-08-19 17:31:42.607 [http-nio-8080-exec-6] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - <==      Total: 3
+2018-08-19 17:31:42.722 [http-nio-8080-exec-8] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==>  Preparing: select * from tb_area 
+2018-08-19 17:31:42.723 [http-nio-8080-exec-8] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==> Parameters: 
+2018-08-19 17:31:42.726 [http-nio-8080-exec-8] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - <==      Total: 3
+2018-08-19 17:31:42.828 [http-nio-8080-exec-1] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==>  Preparing: select * from tb_area 
+2018-08-19 17:31:42.829 [http-nio-8080-exec-1] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==> Parameters: 
+2018-08-19 17:31:42.832 [http-nio-8080-exec-1] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - <==      Total: 3
+2018-08-19 17:31:42.946 [http-nio-8080-exec-2] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==>  Preparing: select * from tb_area 
+2018-08-19 17:31:42.946 [http-nio-8080-exec-2] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==> Parameters: 
+2018-08-19 17:31:42.947 [http-nio-8080-exec-2] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - <==      Total: 3
+2018-08-19 17:34:12.432 [main] DEBUG com.bob.demo.myo2o.dao.AreaTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-19 17:34:19.654 [main] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==>  Preparing: select * from tb_area order by priority desc 
+2018-08-19 17:34:19.691 [main] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==> Parameters: 
+2018-08-19 17:34:19.830 [main] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - <==      Total: 3
+2018-08-19 19:47:30.219 [main] DEBUG com.bob.demo.myo2o.dao.ShopCategoryDaoTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-19 19:47:36.626 [main] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.insertShopCategory - ==>  Preparing: insert into tb_shop_category ( `shop_category_name`, `shop_category_desc`, `shop_category_img`, `priority`, `create_time`, `last_edit_time`, `parent_id` ) values ( ?, ?, ?, ?, ?, ?, ? ) 
+2018-08-19 19:47:36.688 [main] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.insertShopCategory - ==> Parameters: 吃的(String), 补充体力(String), null, 4(Integer), 2018-08-19 19:47:36.164(Timestamp), 2018-08-19 19:47:36.164(Timestamp), null
+2018-08-19 19:47:36.835 [main] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.insertShopCategory - <==    Updates: 1
+2018-08-19 19:49:55.057 [main] DEBUG com.bob.demo.myo2o.dao.ShopCategoryDaoTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-19 19:50:01.071 [main] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.insertShopCategory - ==>  Preparing: insert into tb_shop_category ( `shop_category_name`, `shop_category_desc`, `shop_category_img`, `priority`, `create_time`, `last_edit_time`, `parent_id` ) values ( ?, ?, ?, ?, ?, ?, ? ) 
+2018-08-19 19:50:01.127 [main] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.insertShopCategory - ==> Parameters: 喝的(String), 补充水分(String), null, 3(Integer), 2018-08-19 19:50:00.635(Timestamp), 2018-08-19 19:50:00.635(Timestamp), null
+2018-08-19 19:50:01.237 [main] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.insertShopCategory - <==    Updates: 1
+2018-08-19 19:52:07.025 [main] DEBUG com.bob.demo.myo2o.dao.ShopCategoryDaoTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-19 19:52:13.027 [main] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.insertShopCategory - ==>  Preparing: insert into tb_shop_category ( `shop_category_name`, `shop_category_desc`, `shop_category_img`, `priority`, `create_time`, `last_edit_time`, `parent_id` ) values ( ?, ?, ?, ?, ?, ?, ? ) 
+2018-08-19 19:52:13.075 [main] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.insertShopCategory - ==> Parameters: 早餐(String), 早上吃的(String), null, 4(Integer), 2018-08-19 19:52:12.617(Timestamp), 2018-08-19 19:52:12.617(Timestamp), 1(Long)
+2018-08-19 19:52:13.189 [main] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.insertShopCategory - <==    Updates: 1
+2018-08-19 19:53:01.929 [main] DEBUG com.bob.demo.myo2o.dao.ShopCategoryDaoTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-19 19:53:07.729 [main] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.insertShopCategory - ==>  Preparing: insert into tb_shop_category ( `shop_category_name`, `shop_category_desc`, `shop_category_img`, `priority`, `create_time`, `last_edit_time`, `parent_id` ) values ( ?, ?, ?, ?, ?, ?, ? ) 
+2018-08-19 19:53:07.776 [main] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.insertShopCategory - ==> Parameters: 午餐(String), 中午吃的(String), null, 3(Integer), 2018-08-19 19:53:07.297(Timestamp), 2018-08-19 19:53:07.297(Timestamp), 1(Long)
+2018-08-19 19:53:07.891 [main] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.insertShopCategory - <==    Updates: 1
+2018-08-19 20:33:28.622 [main] DEBUG com.bob.demo.myo2o.dao.ShopCategoryDaoTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-19 20:33:35.360 [main] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT `shop_category_id`, `shop_category_name`, `shop_category_desc`, `shop_category_img`, `priority`, `create_time`, `last_edit_time`, `parent_id` FROM `tb_shop_category` WHERE parent_id is null order by priority desc 
+2018-08-19 20:33:35.399 [main] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
+2018-08-19 20:33:35.537 [main] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 2
+2018-08-19 20:34:38.493 [main] DEBUG com.bob.demo.myo2o.dao.ShopCategoryDaoTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-19 20:34:44.442 [main] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT `shop_category_id`, `shop_category_name`, `shop_category_desc`, `shop_category_img`, `priority`, `create_time`, `last_edit_time`, `parent_id` FROM `tb_shop_category` WHERE parent_id is null order by priority desc 
+2018-08-19 20:34:44.503 [main] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
+2018-08-19 20:34:44.535 [main] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 2
+2018-08-19 20:36:16.559 [main] DEBUG com.bob.demo.myo2o.dao.ShopCategoryDaoTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-19 20:36:22.974 [main] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT `shop_category_id`, `shop_category_name`, `shop_category_desc`, `shop_category_img`, `priority`, `create_time`, `last_edit_time`, `parent_id` FROM `tb_shop_category` WHERE parent_id not null order by priority desc 
+2018-08-19 20:36:23.011 [main] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
+2018-08-19 20:38:55.282 [main] DEBUG com.bob.demo.myo2o.dao.ShopCategoryDaoTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-19 20:39:01.955 [main] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT `shop_category_id`, `shop_category_name`, `shop_category_desc`, `shop_category_img`, `priority`, `create_time`, `last_edit_time`, `parent_id` FROM `tb_shop_category` WHERE parent_id is not null order by priority desc 
+2018-08-19 20:39:02.002 [main] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
+2018-08-19 20:39:02.023 [main] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 2
+2018-08-19 20:41:21.860 [main] DEBUG com.bob.demo.myo2o.dao.ShopCategoryDaoTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-19 20:41:28.525 [main] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.insertShopCategory - ==>  Preparing: insert into tb_shop_category ( `shop_category_name`, `shop_category_desc`, `shop_category_img`, `priority`, `create_time`, `last_edit_time`, `parent_id` ) values ( ?, ?, ?, ?, ?, ?, ? ) 
+2018-08-19 20:41:28.567 [main] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.insertShopCategory - ==> Parameters: 喝的(String), 饮料(String), null, 3(Integer), 2018-08-19 20:41:28.113(Timestamp), 2018-08-19 20:41:28.113(Timestamp), 2(Long)
+2018-08-19 20:41:28.727 [main] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.insertShopCategory - <==    Updates: 1
+2018-08-19 20:41:44.404 [main] DEBUG com.bob.demo.myo2o.dao.ShopCategoryDaoTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-19 20:41:50.666 [main] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT `shop_category_id`, `shop_category_name`, `shop_category_desc`, `shop_category_img`, `priority`, `create_time`, `last_edit_time`, `parent_id` FROM `tb_shop_category` WHERE parent_id is not null order by priority desc 
+2018-08-19 20:41:50.701 [main] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
+2018-08-19 20:41:50.722 [main] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 3
+2018-08-19 20:42:38.807 [main] DEBUG com.bob.demo.myo2o.dao.ShopCategoryDaoTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-19 20:42:45.035 [main] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT `shop_category_id`, `shop_category_name`, `shop_category_desc`, `shop_category_img`, `priority`, `create_time`, `last_edit_time`, `parent_id` FROM `tb_shop_category` WHERE parent_id is not null order by priority desc 
+2018-08-19 20:42:45.085 [main] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
+2018-08-19 20:42:45.119 [main] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 3
+2018-08-19 20:45:38.036 [main] DEBUG com.bob.demo.myo2o.dao.ShopCategoryDaoTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-19 20:45:44.147 [main] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT `shop_category_id`, `shop_category_name`, `shop_category_desc`, `shop_category_img`, `priority`, `create_time`, `last_edit_time`, `parent_id` FROM `tb_shop_category` WHERE parent_id is not null and parent_id = ? order by priority desc 
+2018-08-19 20:45:44.195 [main] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 1(Long)
+2018-08-19 20:45:44.218 [main] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 2
+2018-08-19 20:49:06.400 [main] DEBUG com.bob.demo.myo2o.dao.ShopCategoryDaoTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-19 20:49:12.265 [main] DEBUG c.b.d.m.dao.ShopCategoryDao.queryShopCategoryById - ==>  Preparing: SELECT `shop_category_id`, `shop_category_name`, `shop_category_desc`, `shop_category_img`, `priority`, `create_time`, `last_edit_time`, `parent_id` FROM `tb_shop_category` where shop_category_id = ? order by priority desc 
+2018-08-19 20:49:12.325 [main] DEBUG c.b.d.m.dao.ShopCategoryDao.queryShopCategoryById - ==> Parameters: 1(Long)
+2018-08-19 20:49:12.347 [main] DEBUG c.b.d.m.dao.ShopCategoryDao.queryShopCategoryById - <==      Total: 1
+2018-08-19 20:49:32.303 [main] DEBUG com.bob.demo.myo2o.dao.ShopCategoryDaoTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-19 20:49:39.055 [main] DEBUG c.b.d.m.dao.ShopCategoryDao.queryShopCategoryById - ==>  Preparing: SELECT `shop_category_id`, `shop_category_name`, `shop_category_desc`, `shop_category_img`, `priority`, `create_time`, `last_edit_time`, `parent_id` FROM `tb_shop_category` where shop_category_id = ? order by priority desc 
+2018-08-19 20:49:39.100 [main] DEBUG c.b.d.m.dao.ShopCategoryDao.queryShopCategoryById - ==> Parameters: 5(Long)
+2018-08-19 20:49:39.126 [main] DEBUG c.b.d.m.dao.ShopCategoryDao.queryShopCategoryById - <==      Total: 1
+2018-08-19 20:51:30.842 [main] DEBUG com.bob.demo.myo2o.dao.ShopCategoryDaoTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-19 20:51:36.517 [main] DEBUG c.b.d.m.dao.ShopCategoryDao.queryShopCategoryById - ==>  Preparing: SELECT `shop_category_id`, `shop_category_name`, `shop_category_desc`, `shop_category_img`, `priority`, `create_time`, `last_edit_time`, `parent_id` FROM `tb_shop_category` where shop_category_id = ? order by priority desc 
+2018-08-19 20:51:36.557 [main] DEBUG c.b.d.m.dao.ShopCategoryDao.queryShopCategoryById - ==> Parameters: 5(Long)
+2018-08-19 20:51:36.583 [main] DEBUG c.b.d.m.dao.ShopCategoryDao.queryShopCategoryById - <==      Total: 1
+2018-08-19 22:12:07.979 [main] DEBUG com.bob.demo.myo2o.dao.PersonInfoDaoTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-19 22:12:13.845 [main] DEBUG c.b.demo.myo2o.dao.PersonInfoDao.insertPersonInfo - ==>  Preparing: insert into tb_person_info ( `person_name`, `person_img`, `email`, `gender`, `enable_status`, `person_type`, `create_time`, `last_edit_time` ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2018-08-19 22:12:13.895 [main] DEBUG c.b.demo.myo2o.dao.PersonInfoDao.insertPersonInfo - ==> Parameters: xiu(String), null, null, 女(String), 1(Integer), 2(Integer), 2018-08-19 22:12:13.42(Timestamp), 2018-08-19 22:12:13.42(Timestamp)
+2018-08-19 22:12:14.001 [main] DEBUG c.b.demo.myo2o.dao.PersonInfoDao.insertPersonInfo - <==    Updates: 1
+2018-08-19 22:17:01.833 [main] DEBUG com.bob.demo.myo2o.dao.PersonInfoDaoTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-19 22:17:08.561 [main] DEBUG c.b.d.myo2o.dao.PersonInfoDao.queryPersonInfoById - ==>  Preparing: select * from tb_person_info where person_info_id = ? 
+2018-08-19 22:17:08.615 [main] DEBUG c.b.d.myo2o.dao.PersonInfoDao.queryPersonInfoById - ==> Parameters: 1(Long)
+2018-08-19 22:17:37.983 [main] DEBUG com.bob.demo.myo2o.dao.PersonInfoDaoTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-19 22:17:44.522 [main] DEBUG c.b.d.myo2o.dao.PersonInfoDao.queryPersonInfoById - ==>  Preparing: select * from tb_person_info where person_id = ? 
+2018-08-19 22:17:44.582 [main] DEBUG c.b.d.myo2o.dao.PersonInfoDao.queryPersonInfoById - ==> Parameters: 1(Long)
+2018-08-19 22:17:44.606 [main] DEBUG c.b.d.myo2o.dao.PersonInfoDao.queryPersonInfoById - <==      Total: 1
+2018-08-19 22:49:39.617 [main] DEBUG com.bob.demo.myo2o.dao.ShopDaoTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-19 22:49:45.804 [main] DEBUG com.bob.demo.myo2o.dao.ShopDao.insertShop - ==>  Preparing: insert into tb_shop ( `shop_name`, `shop_desc`, `shop_addr`, `phone`, `shop_img`, `priority`, `create_time`, `last_edit_time`, `enable_status`, `advice`, `area_id`, `shop_category_id`, `owner_id` ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+2018-08-19 22:49:45.856 [main] DEBUG com.bob.demo.myo2o.dao.ShopDao.insertShop - ==> Parameters: 小米粥(String), 好喝，养胃(String), 路南(String), 110(String), null, 4(Integer), 2018-08-19 22:49:45.371(Timestamp), 2018-08-19 22:49:45.371(Timestamp), 1(Integer), 没有建议(String), 3(Integer), 3(Long), null
+2018-08-19 22:50:45.684 [main] DEBUG com.bob.demo.myo2o.dao.ShopDaoTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-19 22:50:51.551 [main] DEBUG com.bob.demo.myo2o.dao.ShopDao.insertShop - ==>  Preparing: insert into tb_shop ( `shop_name`, `shop_desc`, `shop_addr`, `phone`, `shop_img`, `priority`, `create_time`, `last_edit_time`, `enable_status`, `advice`, `area_id`, `shop_category_id`, `owner_id` ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+2018-08-19 22:51:30.746 [main] DEBUG com.bob.demo.myo2o.dao.ShopDaoTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-19 22:51:36.592 [main] DEBUG com.bob.demo.myo2o.dao.ShopDao.insertShop - ==>  Preparing: insert into tb_shop ( `shop_name`, `shop_desc`, `shop_addr`, `phone`, `shop_img`, `priority`, `create_time`, `last_edit_time`, `enable_status`, `advice`, `area_id`, `shop_category_id`, `owner_id` ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+2018-08-19 22:51:36.642 [main] DEBUG com.bob.demo.myo2o.dao.ShopDao.insertShop - ==> Parameters: 小米粥(String), 好喝，养胃(String), 路南(String), 110(String), null, 4(Integer), 2018-08-19 22:51:36.161(Timestamp), 2018-08-19 22:51:36.161(Timestamp), 1(Integer), 没有建议(String), 3(Integer), 3(Long), 1(Long)
+2018-08-19 22:51:36.763 [main] DEBUG com.bob.demo.myo2o.dao.ShopDao.insertShop - <==    Updates: 1
+2018-08-19 22:55:17.757 [main] DEBUG com.bob.demo.myo2o.dao.ShopDaoTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-19 22:55:23.672 [main] DEBUG com.bob.demo.myo2o.dao.ShopDao.insertShop - ==>  Preparing: insert into tb_shop ( `shop_name`, `shop_desc`, `shop_addr`, `phone`, `shop_img`, `priority`, `create_time`, `last_edit_time`, `enable_status`, `advice`, `area_id`, `shop_category_id`, `owner_id` ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+2018-08-19 22:55:23.715 [main] DEBUG com.bob.demo.myo2o.dao.ShopDao.insertShop - ==> Parameters: 可口可乐(String), 冰爽(String), 路东(String), 120(String), null, 4(Integer), 2018-08-19 22:55:23.234(Timestamp), 2018-08-19 22:55:23.234(Timestamp), 1(Integer), 没有建议(String), 1(Integer), 5(Long), 1(Long)
+2018-08-19 22:55:23.867 [main] DEBUG com.bob.demo.myo2o.dao.ShopDao.insertShop - <==    Updates: 1
+2018-08-19 23:21:31.081 [main] DEBUG com.bob.demo.myo2o.dao.ShopDaoTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-19 23:21:37.154 [main] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopById - ==>  Preparing: select s.`shop_id`, s.`shop_name`, s.`shop_desc`, s.`shop_addr`, s.`phone`, s.`shop_img`, s.`priority`, s.`create_time`, s.`last_edit_time`, s.`enable_status`, s.`advice`, a.`area_id`, a.area_name, sc.`shop_category_id`, sc.shop_category_name, p.person_id, p.person_name from tb_shop s, tb_shop_category sc, tb_area a, tb_person_info p where s.area_id = a.area_id and s.shop_category_id = sc.shop_category_id and s.owner_id = p.person_id and s.shop_id = ? order by s.priority desc 
+2018-08-19 23:21:37.190 [main] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopById - ==> Parameters: 1(Long)
+2018-08-19 23:27:13.867 [main] DEBUG com.bob.demo.myo2o.dao.ShopDaoTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-19 23:27:19.435 [main] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopById - ==>  Preparing: select s.`shop_id`, s.`shop_name`, s.`shop_desc`, s.`shop_addr`, s.`phone`, s.`shop_img`, s.`priority`, s.`create_time`, s.`last_edit_time`, s.`enable_status`, s.`advice`, a.`area_id`, a.area_name, sc.`shop_category_id`, sc.shop_category_name, p.person_id, p.person_name from tb_shop s, tb_shop_category sc, tb_area a, tb_person_info p where s.area_id = a.area_id and s.shop_category_id = sc.shop_category_id and s.owner_id = p.person_id and s.shop_id = ? order by s.priority desc 
+2018-08-19 23:27:19.472 [main] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopById - ==> Parameters: 1(Long)
+2018-08-19 23:27:19.496 [main] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopById - <==      Total: 1
