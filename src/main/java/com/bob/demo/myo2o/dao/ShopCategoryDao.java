@@ -17,7 +17,7 @@ public interface ShopCategoryDao {
 	//修改店铺分类  暂时不需要
 //	int updateShopCategory(ShopCategory shopCategory);
 	//根据店铺类别条件，查询店铺分类
-	List<ShopCategory> queryShopCategory(ShopCategory shopCategory);
+	List<ShopCategory> queryShopCategory(@Param("shopCategoryCondition")ShopCategory shopCategoryCondition);
 	//根据店铺类别Id查询店铺类别
 	ShopCategory queryShopCategoryById(@Param("shopCategoryId")long shopCategoryId);
 	

@@ -14,7 +14,7 @@ import com.bob.demo.myo2o.entity.Shop;
 public interface ShopDao {
 	//新增店铺
 	int insertShop(Shop shop);
-	//修改店铺
+	//修改店铺 
 	int updateShop(Shop shop);
 	//通过shop信息查询分页所有店铺
 	List<Shop> queryShop(@Param("shopCondition")Shop shopCondition,

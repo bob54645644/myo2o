@@ -56,7 +56,7 @@ public class ShopCategoryDaoTest {
 		System.out.println(shopCategory);
 	}
 	@Test
-	@Ignore
+//	@Ignore
 	public void testQueryShopCategory() {
 		ShopCategory shopCategory = new ShopCategory();
 		
@@ -70,6 +70,7 @@ public class ShopCategoryDaoTest {
 		System.out.println(list);
 	}
 	@Test
+	@Ignore
 	public void testQueryShopCategoryById() {
 		ShopCategory category = shopCategoryDao.queryShopCategoryById(5L);
 		System.out.println(category);

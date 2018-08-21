@@ -1,6 +1,7 @@
 package com.bob.demo.myo2o.dao;
 
 import java.util.Date;
+import java.util.List;
 
 import org.junit.Ignore;
 import org.junit.Test;
@@ -30,8 +31,8 @@ public class ShopDaoTest {
 	@Ignore
 	public void testInsertShop() {
 		Shop shop = new Shop();
-		shop.setShopName("可口可乐");
-		shop.setShopDesc("冰爽");
+		shop.setShopName("牛肉面");
+		shop.setShopDesc("面条劲道，汤汁香浓。");
 		shop.setShopAddr("路东");
 		shop.setPhone("120");
 		shop.setPriority(4);
@@ -44,7 +45,7 @@ public class ShopDaoTest {
 		area.setAreaId(1);
 		
 		ShopCategory shopCategory = new ShopCategory();
-		shopCategory.setShopCategoryId(5L);
+		shopCategory.setShopCategoryId(3L);
 		
 		PersonInfo personInfo = new PersonInfo();
 		personInfo.setPersonId(1L);
@@ -58,8 +59,68 @@ public class ShopDaoTest {
 		System.out.println(shop);
 	}
 	@Test
+	@Ignore
 	public void testQueryById() {
 		Shop shop = shopDao.queryShopById(1L);
+		System.out.println(shop);
+	}
+	@Test
+	@Ignore
+	public void testQuery() {
+		Shop shop = new Shop();
+		
+//		ShopCategory shopCategory = new ShopCategory();
+////		shopCategory.setShopCategoryId(5L);
+//		
+//		ShopCategory parent = new ShopCategory();
+//		parent.setShopCategoryId(1L);
+//		shopCategory.setParent(parent);
+//		
+//		shop.setShopCategory(shopCategory);
+		
+//		Area area = new Area();
+//		area.setAreaId(1);
+//		shop.setArea(area);
+		
+//		shop.setEnableStatus(1);
+//		shop.setShopName("米");
+		
+		PersonInfo owner = new PersonInfo();
+		owner.setPersonId(1L);
+		shop.setOwner(owner);
+		
+		List<Shop> list = shopDao.queryShop(shop, 0, 100);
+		System.out.println(list);
+		int i = shopDao.queryShopCount(shop);
+		System.out.println(i);
+	}
+	@Test
+	public void testUpdate() {
+		Shop shop = new Shop();
+		shop.setShopId(1L);
+		shop.setShopName("小米粥");
+		shop.setShopDesc("好喝，养胃");
+		shop.setAdvice("没有建议");
+		shop.setShopAddr("路南");
+		shop.setPhone("110");
+		shop.setPriority(4);
+		shop.setLastEditTime(new Date());
+		shop.setEnableStatus(1);
+		
+		Area area = new Area();
+		area.setAreaId(3);
+		shop.setArea(area);
+		
+		ShopCategory shopCategory = new ShopCategory();
+		shopCategory.setShopCategoryId(3L);
+		shop.setShopCategory(shopCategory);
+		
+		PersonInfo owner = new PersonInfo();
+		owner.setPersonId(1L);
+		shop.setOwner(owner);
+		
+		int i = shopDao.updateShop(shop);
+		System.out.println(i);
 		System.out.println(shop);
 	}
 
