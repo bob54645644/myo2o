@@ -1,5 +1,6 @@
 package com.bob.demo.myo2o.service.impl;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ import com.bob.demo.myo2o.exceptions.ShopOperationalException;
 import com.bob.demo.myo2o.service.ShopService;
 import com.bob.demo.myo2o.utils.Calculate;
 import com.bob.demo.myo2o.utils.ImageHolder;
+import com.bob.demo.myo2o.utils.PathUtil;
 import com.bob.demo.myo2o.utils.ThumbnailUtil;
 
 /** 
@@ -90,6 +92,50 @@ public class ShopServiceImpl implements ShopService{
 	private String getTargetAddr(Shop shop) {
 		// TODO Auto-generated method stub
 		return "/upload/item/shop/"+shop.getShopId();
+	}
+	//根据shopId查询shop
+	@Override
+	public Shop getByShopId(long shopId) {
+		Shop shop = shopDao.queryShopById(shopId);
+		return shop;
+	}
+	//编辑店铺
+	@Override
+	public ShopExecution modifyShop(Shop shop, ImageHolder imageHolder) throws ShopOperationalException{
+		if(shop!=null && shop.getShopId()!=null) {
+			//处理缩略图
+			if(imageHolder!=null && imageHolder.getInputStream()!=null &&
+					imageHolder.getImageName()!=null) {
+				//如果原来有，先删除原来的
+				Shop tempShop = shopDao.queryShopById(shop.getShopId());
+				if(tempShop.getShopImg()!=null) {
+					//删除
+					PathUtil.removeByPath(tempShop.getShopImg());
+				}
+				//生成新的
+				try {
+					String newImg = ThumbnailUtil.generateThumbnail(imageHolder, getTargetAddr(shop));
+					shop.setShopImg(newImg);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					return new ShopExecution(ShopStateEnum.INNER_ERROR);
+				}
+				
+			}
+			//更新店铺信息
+			try {
+				int effectedNum = shopDao.updateShop(shop);
+				if(effectedNum<=0){
+					throw new ShopOperationalException("更新店铺信息失败");
+				}
+			}catch(Exception e) {
+				return new ShopExecution(ShopStateEnum.INNER_ERROR);
+			}
+			return new ShopExecution(ShopStateEnum.SUCCESS);
+		}else {
+			return new ShopExecution(ShopStateEnum.EMPTY);
+		}
+		
 	}
 
 }

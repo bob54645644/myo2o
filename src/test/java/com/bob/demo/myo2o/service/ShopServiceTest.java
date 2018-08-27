@@ -75,5 +75,43 @@ public class ShopServiceTest {
 		ShopExecution se = shopService.addShop(shop, imageHolder);
 		System.out.println(se.getStateInfo());
 	}
+	@Test
+	@Ignore
+	public void testQueryById() {
+		Shop shop = shopService.getByShopId(1L);
+		System.out.println(shop);
+	}
+	@Test
+	public void testModifyShop() throws FileNotFoundException {
+		Shop shop = new Shop();
+		shop.setShopId(6L);
+		shop.setShopName("烧烤");
+		shop.setShopDesc("酥脆，香辣");
+		shop.setPhone("111");
+		shop.setShopAddr("路西");
+		shop.setAdvice("没有建议1111");
+		shop.setLastEditTime(new Date());
+		shop.setPriority(4);
+		shop.setEnableStatus(1);
+		
+		Area area = new Area();
+		area.setAreaId(2);
+		shop.setArea(area);
+		
+		ShopCategory shopCategory = new ShopCategory();
+		shopCategory.setShopCategoryId(6L);
+		shop.setShopCategory(shopCategory);
+		
+		PersonInfo owner = new PersonInfo();
+		owner.setPersonId(1L);
+		shop.setOwner(owner);
+		
+		File file = new File("e:/ftp.png");
+		FileInputStream inputStream = new FileInputStream(file);
+		ImageHolder imageHolder = new ImageHolder(inputStream, file.getName());
+		
+		ShopExecution se = shopService.modifyShop(shop, imageHolder);
+		System.out.println(se.getStateInfo());
+	}
 
 }

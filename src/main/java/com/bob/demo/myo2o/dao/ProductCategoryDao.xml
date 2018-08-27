@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bob.demo.myo2o.dao.ProductCategoryDao">
+	<resultMap type="com.bob.demo.myo2o.entity.ProductCategory"
+		id="ProductCategoryResultMap">
+		<id column="product_category_id" property="productCategoryId" />
+	</resultMap>
+	<!--批量添加productCategory -->
+	<insert id="batchInsertProductCategory"
+		parameterType="java.util.List" useGeneratedKeys="true"
+		keyColumn="product_category_id" keyProperty="productCategoryId">
+		insert into
+		`tb_product_category`
+		(
+		`product_category_name`,
+		`priority`,
+		`create_time`,
+		`shop_id`
+		)
+		values
+		<foreach collection="list" item="productCategory"
+			separator=",">
+			(
+			#{productCategory.productCategoryName},
+			#{productCategory.priority},
+			#{productCategory.createTime},
+			#{productCategory.shopId}
+			)
+		</foreach>
+	</insert>
+	<!-- 通过shopId查询 -->
+	<select id="queryByShopId" parameterType="long"
+		resultType="com.bob.demo.myo2o.entity.ProductCategory">
+		SELECT 
+		`product_category_id`,
+		`product_category_name`,
+		`priority`,
+		`create_time`,
+		`shop_id`
+		FROM
+		`tb_product_category`
+		where
+		shop_id = #{shopId}
+		order by
+		priority desc
+	</select>
+	<!--通过Id和shopID删除productcategory  -->
+	<delete id="deleteById" parameterType="long">
+	delete from
+	`tb_product_category`
+	where
+	product_category_id = #{productCategoryId}
+	and
+	shop_id = #{shopId}
+	</delete>
+</mapper>

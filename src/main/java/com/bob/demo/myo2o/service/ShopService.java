@@ -17,4 +17,9 @@ public interface ShopService {
 			int pageIndex,int pageSize);
 	//新增店铺
 	ShopExecution addShop(Shop shop,ImageHolder imageHolder) throws ShopOperationalException;
+	//根据shopId查询shop
+	Shop getByShopId(long shopId);
+	//编辑店铺
+	ShopExecution modifyShop(Shop shop,ImageHolder imageHolder)throws ShopOperationalException;
+	
 }
