@@ -13,8 +13,8 @@
 	href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
 <link rel="stylesheet"
 	href="//g.alicdn.com/msui/sm/0.6.2/css/sm-extend.min.css">
-	<link rel="stylesheet"
-	href="/css/shopadmin/shopmanagement.css">
+<link rel="stylesheet"
+	href="/css/shopadmin/productcategorymanagement.css">
 </head>
 <body>
 	<div class="page-group">
@@ -33,22 +33,36 @@
 			</header>
 			<!-- 内容 -->
 			<div class="content">
-				<div class="content-block">
-					<div class="row">
+				<div class="content-padded grid-demo">
+
+					<div class="row row-content">
+						<div class="col-33">商品类别</div>
+						<div class="col-33">优先级</div>
+						<div class="col-33">操作</div>
+					</div>
+					<!-- 待填充 -->
+						<div id="productcategory-wrap">
+							<div class="col-33">商品类别1</div>
+							<div class="col-33">1</div>
+							<div class="col-33">
+								<a href="#">删除</a>
+							</div>
+						</div>
+
+				</div>
+				<div class="row">
 						<div class="col-50">
-							<a href="#" external class="button button-big button-fill" id="shop-info">商铺信息</a>
+							<p>
+								<a href="#" id="addbutton" class="button button-big button-fill">新增</a>
+							</p>
 						</div>
 						<div class="col-50">
-							<a href="/shopadmin/productmanagement" external class="button button-big button-fill">商品管理</a>
-						</div>
-						<div class="col-50">
-							<a href="/shopadmin/productcategorymanagement" external class="button button-big button-fill">类别管理</a>
-						</div>
-						<div class="col-100">
-							<a href="javascript:history.back(-1)" class="button button-big button-fill button-danger">返回</a>
+							<p>
+								<a href="#" id="submit" class="button button-big button-fill button-success">提交</a>
+							</p>
 						</div>
 					</div>
-				</div>
+
 
 
 
@@ -71,7 +85,7 @@
 		src='//g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
 	<script type='text/javascript' src='/js/commons/common.js'
 		charset='utf-8'></script>
-	<script type='text/javascript' src='/js/shopadmin/shopmanagement.js'
-		charset='utf-8'></script>
+	<script type='text/javascript'
+		src='/js/shopadmin/productcategorymanagement.js' charset='utf-8'></script>
 </body>
 </html>

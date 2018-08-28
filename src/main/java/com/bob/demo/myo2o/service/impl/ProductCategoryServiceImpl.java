@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.bob.demo.myo2o.dao.ProductCategoryDao;
+import com.bob.demo.myo2o.dao.ProductDao;
 import com.bob.demo.myo2o.dto.ProductCategoryExecution;
 import com.bob.demo.myo2o.entity.ProductCategory;
 import com.bob.demo.myo2o.enums.ProductCategoryStateEnum;
@@ -22,6 +23,8 @@ public class ProductCategoryServiceImpl implements ProductCategoryService {
 
 	@Autowired
 	private ProductCategoryDao productCategoryDao;
+	@Autowired
+	private ProductDao productDao;
 
 	@Override
 	@Transactional
@@ -48,6 +51,12 @@ public class ProductCategoryServiceImpl implements ProductCategoryService {
 			throws ProductOperationalException {
 		if (productCategoryId >= 0 && shopId >= 0) {
 			try {
+				//先解除product与productCategory的关联
+				int effectedNum2 = productDao.updateProductCategoryIdToNull(productCategoryId);
+				//小于0很关键，因为有的product没有关联productcategory
+				if(effectedNum2 <0) {
+					throw new ProductOperationalException("删除productCategory关联失败");
+				}
 				int effectedNum = productCategoryDao.deleteById(productCategoryId, shopId);
 				if (effectedNum <= 0) {
 					throw new ProductOperationalException("删除productCategory失败");

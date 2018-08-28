@@ -27,6 +27,7 @@ import com.bob.demo.myo2o.entity.Shop;
 import com.bob.demo.myo2o.entity.ShopCategory;
 import com.bob.demo.myo2o.enums.ProductCategoryStateEnum;
 import com.bob.demo.myo2o.enums.ShopStateEnum;
+import com.bob.demo.myo2o.exceptions.ProductOperationalException;
 import com.bob.demo.myo2o.service.AreaService;
 import com.bob.demo.myo2o.service.ProductCategoryService;
 import com.bob.demo.myo2o.service.ShopCategoryService;
@@ -275,62 +276,96 @@ public class ShopRestController {
 
 	// 获取商品类别
 	@GetMapping("/productcategorylist")
-	public Map<String,Object> productCategoryList(HttpServletRequest request){
-		Map<String,Object> modelMap = new HashMap<>();
-		//从session中获取currentShop
-		Shop currentShop=null;
+	public Map<String, Object> productCategoryList(HttpServletRequest request) {
+		Map<String, Object> modelMap = new HashMap<>();
+		// 从session中获取currentShop
+		Shop currentShop = null;
 		try {
-			currentShop= (Shop)request.getSession().getAttribute("currentShop");
-			if(currentShop !=null && currentShop.getShopId()>=0) {
-				//查询，返回结果
+			currentShop = (Shop) request.getSession().getAttribute("currentShop");
+			if (currentShop != null && currentShop.getShopId() >= 0) {
+				// 查询，返回结果
 				try {
-					List<ProductCategory> productCategoryList = 
-							productCategoryService.getProductCategoryByShopId(currentShop.getShopId());
+					List<ProductCategory> productCategoryList = productCategoryService
+							.getProductCategoryByShopId(currentShop.getShopId());
 					modelMap.put("success", true);
 					modelMap.put("productCategoryList", productCategoryList);
-				}catch(Exception e) {
+				} catch (Exception e) {
 					modelMap.put("success", false);
 					modelMap.put("errMsg", e.getMessage());
 				}
-			}else {
+			} else {
 				modelMap.put("success", false);
-				modelMap.put("errMsg","currentShop获取失败");
+				modelMap.put("errMsg", "currentShop获取失败");
 			}
-		}catch(Exception e) {
+		} catch (Exception e) {
 			modelMap.put("success", false);
 			modelMap.put("errMsg", e.getMessage());
 		}
 		return modelMap;
 	}
+
 	// 批量新增商品类别
 	@PostMapping("/batchaddproductcategory")
-	public Map<String,Object> batchAddProductCategory(@RequestBody List<ProductCategory> productCategoryList,
-			HttpServletRequest request){
-		Map<String,Object> modelMap = new HashMap<>();
+	public Map<String, Object> batchAddProductCategory(@RequestBody List<ProductCategory> productCategoryList,
+			HttpServletRequest request) {
+		Map<String, Object> modelMap = new HashMap<>();
 		try {
-			Shop currentShop = (Shop)request.getSession().getAttribute("currentShop");
-			//空值判断
-			if(currentShop !=null && currentShop.getShopId()!=null &&
-					productCategoryList!=null && productCategoryList.size()>0) {
-				//对list处理
-				productCategoryList.forEach(x->x.setShopId(currentShop.getShopId()));
+			Shop currentShop = (Shop) request.getSession().getAttribute("currentShop");
+			// 空值判断
+			if (currentShop != null && currentShop.getShopId() != null && productCategoryList != null
+					&& productCategoryList.size() > 0) {
+				// 对list处理
+				productCategoryList.forEach(x -> {
+					x.setShopId(currentShop.getShopId());
+					x.setCreateTime(new Date());
+				});
 				ProductCategoryExecution pce = productCategoryService.batchAddProductCategory(productCategoryList);
-				if(pce.getState()==ProductCategoryStateEnum.SUCCESS.getState()) {
+				if (pce.getState() == ProductCategoryStateEnum.SUCCESS.getState()) {
 					modelMap.put("success", true);
-				}else {
+				} else {
 					modelMap.put("success", false);
 					modelMap.put("errMsg", "新增商品类别失败！");
 				}
-			}else {
+			} else {
 				modelMap.put("success", false);
 				modelMap.put("errMsg", "店铺或商品类别信息为空");
 			}
-		} catch(Exception e) {
+		} catch (Exception e) {
 			modelMap.put("success", false);
 			modelMap.put("errMsg", e.getMessage());
 		}
 		return modelMap;
 	}
+
 	// 单个删除商品类别
+	@PostMapping("/removeproductcategory")
+	public Map<String, Object> removeProductCategory(HttpServletRequest request) {
+		Map<String, Object> modelMap = new HashMap<>();
+		try {
+			// 获取currentShop
+			Shop currentShop = (Shop) request.getSession().getAttribute("currentShop");
+			if (currentShop != null && currentShop.getShopId() != null) {
+				long productCategoryId = HttpServletRequestUtil.getLong(request, "productCategoryId");
+				if (productCategoryId > -1) {
+					ProductCategoryExecution pce = productCategoryService.removeProductCategory(productCategoryId,
+							currentShop.getShopId());
+					if (pce.getState() == ProductCategoryStateEnum.SUCCESS.getState()) {
+						modelMap.put("success", true);
+					} else {
+						throw new ProductOperationalException("数据库删除productCategory失败！");
+					}
+				} else {
+					throw new ProductOperationalException("productCategory信息为空");
+				}
+
+			} else {
+				throw new ProductOperationalException("currentShop获取失败！");
+			}
+		} catch (Exception e) {
+			modelMap.put("success", false);
+			modelMap.put("errMsg", e.getMessage());
+		}
+		return modelMap;
+	}
 
 }

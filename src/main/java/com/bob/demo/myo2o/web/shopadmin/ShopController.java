@@ -27,4 +27,9 @@ public class ShopController {
 	public String shopManagement() {
 		return "shopadmin/shopmanagement";
 	}
+	//商品类别管理
+	@GetMapping("/productcategorymanagement")
+	public String productCategoryManagement() {
+		return "shopadmin/productcategorymanagement";
+	}
 }

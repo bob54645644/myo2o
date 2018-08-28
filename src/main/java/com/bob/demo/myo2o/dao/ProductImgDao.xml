@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bob.demo.myo2o.dao.ProductImgDao">
+	<resultMap type="com.bob.demo.myo2o.entity.ProductImg"
+		id="ProductImgResultMap">
+		<id column="img_id" property="imgId" />
+	</resultMap>
+	<!-- 批量插入 -->
+	<insert id="batchInsertProductImg"
+		parameterType="java.util.List" useGeneratedKeys="true"
+		keyColumn="img_id" keyProperty="imgId">
+		insert into
+		tb_product_img
+		(`img_addr`,
+		`img_desc`,
+		`priority`,
+		`create_time`,
+		`product_id`)
+		values
+		<foreach collection="list" item="productImg" separator=",">
+			(
+			#{productImg.imgAddr},
+			#{productImg.imgDesc},
+			#{productImg.priority},
+			#{productImg.createTime},
+			#{productImg.productId}
+			)
+		</foreach>
+	</insert>
+	<!-- 根据productId查询 -->
+	<select id="queryByProductId" parameterType="long" 
+	resultType="com.bob.demo.myo2o.entity.ProductImg">
+	SELECT 	
+	`img_id`, 
+	`img_addr`, 
+	`img_desc`, 
+	`priority`, 
+	`create_time`, 
+	`product_id`
+	 
+	FROM 
+	`tb_product_img` 
+	where
+	product_id = #{productId}
+	order by
+	priority desc
+	</select>
+	<!-- 批量删除，通过productId -->
+	<delete id="deleteByProductId" parameterType="long">
+	delete from
+	tb_product_img
+	where
+	product_id = #{productId}
+	</delete>
+
+</mapper>

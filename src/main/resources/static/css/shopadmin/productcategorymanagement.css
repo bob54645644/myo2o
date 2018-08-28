@@ -1,0 +1,18 @@
+.col-50 {
+	padding: .3rem;
+}
+
+.col-33 {
+	padding: .3rem;
+}
+
+}
+.row-content {
+	border: 1px solid #999;
+	padding: .5rem;
+	border-bottom: none;
+}
+
+.row-content:last-child {
+	border-bottom: 1px solid #999;;
+}
