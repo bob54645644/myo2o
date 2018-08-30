@@ -4,8 +4,10 @@ package com.bob.demo.myo2o.config;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import com.bob.demo.myo2o.utils.PathUtil;
 import com.google.code.kaptcha.servlet.KaptchaServlet;
 
 /** 
@@ -30,4 +32,11 @@ public class WebConfig implements WebMvcConfigurer{
 		bean.addInitParameter("kaptcha.textproducer.font.names", "Arial");// 字体
 		return bean;
 	}
+
+	@Override
+	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		
+		registry.addResourceHandler("/upload/**").addResourceLocations("file:"+PathUtil.getImageBasePath()+"/upload/");
+	}
+	
 }

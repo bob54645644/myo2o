@@ -368,4 +368,25 @@ public class ShopRestController {
 		return modelMap;
 	}
 
+	// 获取productCategory列表，根据shopId
+	@GetMapping("/getproductcategorylist")
+	public Map<String, Object> getProductCategoryList(HttpServletRequest request) {
+		Map<String, Object> modelMap = new HashMap<>();
+		try {
+			Shop currentShop = (Shop)request.getSession().getAttribute("currentShop");
+			if(currentShop!=null && currentShop.getShopId()!=null) {
+				List<ProductCategory> productCategoryList = productCategoryService.getProductCategoryByShopId(currentShop.getShopId());
+				modelMap.put("success",true);
+				modelMap.put("productCategoryList", productCategoryList);
+			}else {
+				modelMap.put("success", false);
+				modelMap.put("errMsg", "currentShop获取失败");
+			}
+		}catch(Exception e) {
+			modelMap.put("success", false);
+			modelMap.put("errMsg",e.getMessage());
+		}
+		return modelMap;
+	}
+
 }

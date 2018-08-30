@@ -25,7 +25,7 @@ public class PathUtil {
 		return shopImagePath;
 	}
 
-	// 通过路径删除文件
+	// 通过相对路径删除文件
 	public static void removeByPath(String path) {
 		File file = new File(PathUtil.getImageBasePath()+path);
 		if (file.exists()) {

@@ -7,7 +7,10 @@ package com.bob.demo.myo2o.utils;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.Ignore;
 import org.junit.Test;
@@ -32,11 +35,25 @@ public class ThumbnailUtilTest {
 		PathUtil.removeByPath("/1");
 	}
 	@Test
+	@Ignore
 	public void testa() {
 		Area area = new Area();
 		
 		Product product = (Product)new Object();
 		System.out.println(product);
+	}
+	@Test
+	public void testGenerateImg() throws IOException {
+		File file = new File("e:/ftp.png");
+		FileInputStream inputStream = new FileInputStream(file);
+		
+		List<ImageHolder> imageHolders = new ArrayList<>();
+		ImageHolder imageHolder = new ImageHolder(inputStream, file.getName());
+		imageHolders.add(imageHolder);
+		
+		String relative = ThumbnailUtil.generateImg(imageHolder, "/test/28");
+		System.out.println(relative);
+		
 	}
 
 }

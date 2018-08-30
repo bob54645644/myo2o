@@ -11,7 +11,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result column="product_img" property="productImg" />
 		<result column="normal_price" property="normalPrice" />
 		<result column="promotion_price" property="promotionPrice" />
-		<result column="priority" property="priority" />
+		<result column="product_priority" property="priority" />
 		<result column="p_create_time" property="createTime" />
 		<result column="last_eite_time" property="lastEditTime" />
 		<result column="enable_status" property="enableStatus" />
@@ -19,6 +19,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<association property="productCategory"
 			javaType="com.bob.demo.myo2o.entity.ProductCategory">
 			<id column="product_category_id" property="productCategoryId" />
+			<result column="product_category_name" property="productCategoryName"/>
 		</association>
 		<association property="shop"
 			javaType="com.bob.demo.myo2o.entity.Shop">
@@ -77,12 +78,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		p.`product_img`,
 		p.`normal_price`,
 		p.`promotion_price`,
-		p.`priority`,
+		p.`priority` product_priority,
 		p.`create_time` p_create_time,
 		p.`last_edit_time`,
 		p.`enable_status`,
-		p.`product_category_id`,
 		p.`shop_id`,
+		p.`product_category_id`,
 
 		pi.img_id,
 		pi.img_addr,
@@ -90,8 +91,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		pi.priority,
 		pi.create_time pi_create_time
 		FROM
-		`tb_product`
-		p
+		`tb_product` p
 		left join
 		tb_product_img pi
 		on

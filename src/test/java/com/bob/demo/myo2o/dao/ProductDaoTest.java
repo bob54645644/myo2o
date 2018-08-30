@@ -51,9 +51,9 @@ public class ProductDaoTest {
 		System.out.println(product);
 	}
 	@Test
-	@Ignore
+//	@Ignore
 	public void testQueryById() {
-		Product product = productDao.queryById(2L);
+		Product product = productDao.queryById(7L);
 		System.out.println(product);
 	}
 	@Test
@@ -109,6 +109,7 @@ public class ProductDaoTest {
 		System.out.println(i);
 	}
 	@Test
+	@Ignore
 	public void testToNull() {
 		int i = productDao.updateProductCategoryIdToNull(10L);
 		System.out.println(i);

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bob.demo.myo2o.dao.HeadLineDao">
+	<resultMap type="com.bob.demo.myo2o.entity.HeadLine"
+		id="HeadLineResultMap">
+		<id column="head_line_id" property="headLineId" />
+	</resultMap>
+	<!-- 新增HeadLine -->
+	<insert id="insertHeadLine"
+		parameterType="com.bob.demo.myo2o.entity.HeadLine"
+		useGeneratedKeys="true" keyColumn="head_line_id"
+		keyProperty="headLineId">
+		insert into
+		tb_head_line
+		(
+		`head_line_name`,
+		`head_line_img`,
+		`priority`,
+		`enable_status`,
+		`head_line_link`,
+		`create_time`,
+		`last_edit_time`
+		)
+		values
+		(
+		#{headLineName},
+		#{headLineImg},
+		#{priority},
+		#{enableStatus},
+		#{headLineLink},
+		#{createTime},
+		#{lastEditTime}
+		)
+	</insert>
+	<!--通过条件查询headline ，主要为了查全部的和状态正常的两种 -->
+	<select id="queryHeadLineListByCondition"
+		parameterType="com.bob.demo.myo2o.entity.HeadLine"
+		resultType="com.bob.demo.myo2o.entity.HeadLine">
+		select * 
+		from
+		tb_head_line
+		where
+		enable_status=#{enableStatus}
+		order by
+		priority desc
+	</select>
+</mapper>

@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.Date;
+import java.util.List;
 
 import org.junit.Ignore;
 import org.junit.Test;
@@ -30,14 +31,26 @@ import com.bob.demo.myo2o.utils.ImageHolder;
 public class ShopServiceTest {
 	@Autowired
 	private ShopService shopService;
+	@Autowired
+	private ShopCategoryService shopCategoryService;
 	
 	@Test
-	@Ignore
+//	@Ignore
 	public void testGetShopList() {
 		Shop shop = new Shop();
-		PersonInfo owner = new PersonInfo();
-		owner.setPersonId(1L);
-		shop.setOwner(owner);
+//		PersonInfo owner = new PersonInfo();
+//		owner.setPersonId(1L);
+//		shop.setOwner(owner);
+		ShopCategory shopCategory = new ShopCategory();
+		shopCategory.setShopCategoryId(1L);
+//		ShopCategory parent = new ShopCategory();
+//		parent.setShopCategoryId(1L);
+//		shopCategory.setParent(parent);
+		List<ShopCategory> list = shopCategoryService.getShopCategory(shopCategory);
+		System.out.println(list.size());
+		
+		shop.setShopCategory(shopCategory);
+		
 		ShopExecution se = shopService.getShopListByCondition(shop, 0, 100);
 		System.out.println(se.getCount());
 		System.out.println(se.getShopList());
@@ -82,6 +95,7 @@ public class ShopServiceTest {
 		System.out.println(shop);
 	}
 	@Test
+	@Ignore
 	public void testModifyShop() throws FileNotFoundException {
 		Shop shop = new Shop();
 		shop.setShopId(6L);
