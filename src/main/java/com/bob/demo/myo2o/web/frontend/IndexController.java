@@ -21,4 +21,14 @@ public class IndexController {
 	public String shopList() {
 		return "frontend/shoplist";
 	}
+	//店铺详情
+	@GetMapping("/shopdetail")
+	public String shopDetail() {
+		return "frontend/shopdetail";
+	}
+	//商品详情
+	@GetMapping("/productdetail")
+	public String productDetail() {
+		return "frontend/productdetail";
+	}
 }

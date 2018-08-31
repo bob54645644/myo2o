@@ -18,7 +18,7 @@ $(function() {
 		var categoryHtml = '';
 		shopCategoryList.map(function(item, index) {
 			categoryHtml += '<a href="/frontend/shoplist?parentId='
-					+ item.shopCategoryId + '">'
+					+ item.shopCategoryId + '" external>'
 					+'<span>'+item.shopCategoryName+'</span>'
 					+'<img src="'+item.shopCategoryImg+'" width="40" height="50">'
 					+'</a>';

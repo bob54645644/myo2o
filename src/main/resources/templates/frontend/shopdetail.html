@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>商店详情</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<link rel="stylesheet"
+	href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+<link rel="stylesheet"
+	href="//g.alicdn.com/msui/sm/0.6.2/css/sm-extend.min.css">
+</head>
+<body>
+	<div class="page-group">
+		<div class="page page-current">
+
+
+
+			<!-- 你的html代码 -->
+			<!-- 标题 -->
+			<header class="bar bar-nav">
+				<a href="javascript:history.back(-1)" external
+					class="button button-link button-nav pull-left"> <span
+					class="icon icon-left"></span> 返回
+				</a>
+				<h1 class="title" id="shop-name">商店名称</h1>
+			</header>
+			<!-- 内容 -->
+			<div class="content infinite-scroll infinite-scroll-bottom"
+				data-distance="100">
+				<!-- 店铺详情 -->
+				<div id="shopdetail">
+					<div class="card demo-card-header-pic">
+						<div valign="bottom"
+							class="card-header color-white no-border no-padding">
+							<img class='card-cover' id="shop-img"
+								src="//gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg"
+								alt="">
+						</div>
+						<div class="card-content">
+							<div class="card-content-inner">
+								<p class="color-gray" id="last-edit-time">发表于 2015/01/15</p>
+								<p id="shop-desc">店铺描述</p>
+							</div>
+						</div>
+						<div class="card-footer">
+							<span id="shop-addr">地址</span> <span id="phone">电话110</span>
+						</div>
+					</div>
+				</div>
+				<!-- 商品类别 -->
+				<div class="row" id="product-category-wrap">
+					<div class="col-33">
+						<a class="button">商品类别一</a>
+					</div>
+					<div class="col-33">
+						<a class="button">商品类别一</a>
+					</div>
+					<div class="col-33">
+						<a class="button">商品类别二</a>
+					</div>
+					<div class="col-33">
+						<a class="button">商品类别三</a>
+					</div>
+					<div class="col-33">
+						<a class="button">商品类别四</a>
+					</div>
+					<div class="col-33">
+						<a class="button">商品类别五</a>
+					</div>
+					<div class="col-33">
+						<a class="button">商品类别六</a>
+					</div>
+				</div>
+
+
+				<!--搜索栏  -->
+				<div id="detail-search">
+					<div class="searchbar">
+						<a class="searchbar-cancel">取消</a>
+						<div class="search-input">
+							<label class="icon icon-search" for="search"></label> <input
+								type="search" id='search' placeholder='输入商品名称...' />
+						</div>
+					</div>
+				</div>
+				<!-- 商品列表 -->
+				<div id="product-wrap">
+					<!-- <div class="card">
+						<div class="card-header">商品名称</div>
+						<div class="card-content">
+							<div class="list-block media-list">
+								<ul>
+									<li class="item-content">
+										<div class="item-media">
+											<a href="#"> <img
+												src="http://gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg"
+												width="44">
+											</a>
+										</div>
+										<div class="item-inner">
+											<div>商品详情</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="card-footer">
+							<span>2015/01/15</span> <span>点击查看</span>
+						</div>
+					</div> -->
+				</div>
+
+				<!-- 加载提示符 -->
+				<div class="infinite-scroll-preloader">
+					<div class="preloader"></div>
+				</div>
+			</div>
+
+		</div>
+
+
+	</div>
+
+	<script type='text/javascript'
+		src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+	<script type='text/javascript'
+		src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+	<script type='text/javascript'
+		src='//g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
+	<script type='text/javascript' src='/js/commons/common.js'
+		charset='utf-8'></script>
+	<script type='text/javascript' src='/js/frontend/shopdetail.js'
+		charset='utf-8'></script>
+</body>
+</html>

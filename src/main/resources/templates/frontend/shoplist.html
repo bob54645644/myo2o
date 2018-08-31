@@ -13,6 +13,7 @@
 	href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
 <link rel="stylesheet"
 	href="//g.alicdn.com/msui/sm/0.6.2/css/sm-extend.min.css">
+<link rel="stylesheet" href="/css/frontend/shoplist.css">
 </head>
 <body>
 	<div class="page-group">
@@ -23,27 +24,90 @@
 			<!-- 你的html代码 -->
 			<!-- 标题 -->
 			<header class="bar bar-nav">
+				<a class="button button-link button-nav pull-left back"
+					href="javascript:history.back(-1)"> <span
+					class="icon icon-left"></span> 返回
+				</a>
 				<h1 class="title">店铺列表</h1>
 			</header>
+			<!-- 搜索栏 -->
+			<div class="bar bar-header-secondary">
+				<div class="searchbar">
+					<a class="searchbar-cancel">取消</a>
+					<div class="search-input">
+						<label class="icon icon-search" for="search"></label> <input
+							type="search" id='search' placeholder='输入店铺名...' />
+					</div>
+				</div>
+			</div>
 			<!-- 内容 -->
-			<div class="content">
+			<div class="content infinite-scroll infinite-scroll-bottom"
+					data-distance="100">
+				<!-- 店铺类别 -->
+				<div class="content-padded grid-demo">
+					<div class="row" id="category-wrap">
+						<div class="col-33">
+							<a href="#" class="button">全部类别</a>
+						</div>
+						<div class="col-33">
+							<a href="#" class="button">类别一</a>
+						</div>
+						<div class="col-33">
+							<a href="#" class="button">类别二</a>
+						</div>
+						<div class="col-33">
+							<a href="#" class="button">类别三</a>
+						</div>
+						<div class="col-33">
+							<a href="#" class="button">类别四</a>
+						</div>
+					</div>
+
+				</div>
+
+				<!-- 区域，下拉列表 -->
+				<div class="select-wrap">
+					<select class="select" id="area-wrap">
+						<option>全部区域</option>
+						<option>区域一</option>
+						<option>区域二</option>
+						<option>区域三</option>
+					</select>
+				</div>
+				<!-- 添加 class infinite-scroll 和 data-distance  向下无限滚动可不加infinite-scroll-bottom类，这里加上是为了和下面的向上无限滚动区分-->
+				
+					<div class="list-block"></div>
+
+
+					<!-- 店铺卡片 -->
+					<div id="shop-card-wrap">
+						
+					</div>
+
+					<!-- 加载提示符 -->
+					<div class="infinite-scroll-preloader">
+						<div class="preloader"></div>
+					</div>
 				
 
-				
-				
+
+
+
 			</div>
 
 
 		</div>
-	</div>
 
-	<script type='text/javascript'
-		src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
-	<script type='text/javascript'
-		src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
-	<script type='text/javascript'
-		src='//g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
-	<script type='text/javascript' src='/js/frontend/shoplist.js'
-		charset='utf-8'></script>
+		<script type='text/javascript'
+			src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+		<script type='text/javascript'
+			src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+		<script type='text/javascript'
+			src='//g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js'
+			charset='utf-8'></script>
+		<script type='text/javascript' src='/js/commons/common.js'
+			charset='utf-8'></script>
+		<script type='text/javascript' src='/js/frontend/shoplist.js'
+			charset='utf-8'></script>
 </body>
 </html>

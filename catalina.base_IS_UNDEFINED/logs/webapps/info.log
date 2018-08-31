@@ -1,24 +1,3 @@
-2018-08-30 09:47:13.311 [restartedMain] INFO  com.bob.demo.myo2o.Myo2oApplication - Starting Myo2oApplication on DESKTOP-6V9R83N with PID 22964 (E:\eclipse-javaee\myo2o\target\classes started by DELL in E:\eclipse-javaee\myo2o)
-2018-08-30 09:47:13.343 [restartedMain] INFO  com.bob.demo.myo2o.Myo2oApplication - No active profile set, falling back to default profiles: default
-2018-08-30 09:47:22.549 [restartedMain] INFO  com.bob.demo.myo2o.Myo2oApplication - Started Myo2oApplication in 9.821 seconds (JVM running for 11.381)
-2018-08-30 10:11:04.599 [restartedMain] INFO  com.bob.demo.myo2o.Myo2oApplication - Starting Myo2oApplication on DESKTOP-6V9R83N with PID 16916 (E:\eclipse-javaee\myo2o\target\classes started by DELL in E:\eclipse-javaee\myo2o)
-2018-08-30 10:11:04.609 [restartedMain] INFO  com.bob.demo.myo2o.Myo2oApplication - No active profile set, falling back to default profiles: default
-2018-08-30 10:11:12.679 [restartedMain] INFO  com.bob.demo.myo2o.Myo2oApplication - Started Myo2oApplication in 8.468 seconds (JVM running for 9.468)
-2018-08-30 10:19:59.503 [main] INFO  com.bob.demo.myo2o.service.ShopServiceTest - Starting ShopServiceTest on DESKTOP-6V9R83N with PID 31508 (started by DELL in E:\eclipse-javaee\myo2o)
-2018-08-30 10:19:59.506 [main] INFO  com.bob.demo.myo2o.service.ShopServiceTest - No active profile set, falling back to default profiles: default
-2018-08-30 10:20:05.037 [main] INFO  com.bob.demo.myo2o.service.ShopServiceTest - Started ShopServiceTest in 6.056 seconds (JVM running for 7.99)
-2018-08-30 10:22:36.443 [main] INFO  com.bob.demo.myo2o.service.ShopServiceTest - Starting ShopServiceTest on DESKTOP-6V9R83N with PID 17376 (started by DELL in E:\eclipse-javaee\myo2o)
-2018-08-30 10:22:36.449 [main] INFO  com.bob.demo.myo2o.service.ShopServiceTest - No active profile set, falling back to default profiles: default
-2018-08-30 10:22:41.436 [main] INFO  com.bob.demo.myo2o.service.ShopServiceTest - Started ShopServiceTest in 5.367 seconds (JVM running for 6.854)
-2018-08-30 10:23:31.939 [main] INFO  com.bob.demo.myo2o.service.ShopServiceTest - Starting ShopServiceTest on DESKTOP-6V9R83N with PID 6520 (started by DELL in E:\eclipse-javaee\myo2o)
-2018-08-30 10:23:31.942 [main] INFO  com.bob.demo.myo2o.service.ShopServiceTest - No active profile set, falling back to default profiles: default
-2018-08-30 10:23:36.875 [main] INFO  com.bob.demo.myo2o.service.ShopServiceTest - Started ShopServiceTest in 5.308 seconds (JVM running for 6.8)
-2018-08-30 10:25:38.290 [main] INFO  com.bob.demo.myo2o.service.ShopServiceTest - Starting ShopServiceTest on DESKTOP-6V9R83N with PID 24040 (started by DELL in E:\eclipse-javaee\myo2o)
-2018-08-30 10:25:38.297 [main] INFO  com.bob.demo.myo2o.service.ShopServiceTest - No active profile set, falling back to default profiles: default
-2018-08-30 10:25:43.235 [main] INFO  com.bob.demo.myo2o.service.ShopServiceTest - Started ShopServiceTest in 5.328 seconds (JVM running for 6.781)
-2018-08-30 11:03:30.457 [main] INFO  com.bob.demo.myo2o.service.ShopServiceTest - Starting ShopServiceTest on DESKTOP-6V9R83N with PID 8840 (started by DELL in E:\eclipse-javaee\myo2o)
-2018-08-30 11:03:30.462 [main] INFO  com.bob.demo.myo2o.service.ShopServiceTest - No active profile set, falling back to default profiles: default
-2018-08-30 11:03:35.427 [main] INFO  com.bob.demo.myo2o.service.ShopServiceTest - Started ShopServiceTest in 5.33 seconds (JVM running for 6.666)
-2018-08-30 11:31:30.787 [restartedMain] INFO  com.bob.demo.myo2o.Myo2oApplication - Starting Myo2oApplication on DESKTOP-6V9R83N with PID 25236 (E:\eclipse-javaee\myo2o\target\classes started by DELL in E:\eclipse-javaee\myo2o)
-2018-08-30 11:31:30.795 [restartedMain] INFO  com.bob.demo.myo2o.Myo2oApplication - No active profile set, falling back to default profiles: default
-2018-08-30 11:31:39.034 [restartedMain] INFO  com.bob.demo.myo2o.Myo2oApplication - Started Myo2oApplication in 8.691 seconds (JVM running for 9.631)
+2018-08-31 21:22:41.051 [restartedMain] INFO  com.bob.demo.myo2o.Myo2oApplication - Starting Myo2oApplication on DESKTOP-6V9R83N with PID 15376 (E:\eclipse-javaee\myo2o\target\classes started by DELL in E:\eclipse-javaee\myo2o)
+2018-08-31 21:22:41.137 [restartedMain] INFO  com.bob.demo.myo2o.Myo2oApplication - No active profile set, falling back to default profiles: default
+2018-08-31 21:22:49.250 [restartedMain] INFO  com.bob.demo.myo2o.Myo2oApplication - Started Myo2oApplication in 8.577 seconds (JVM running for 9.786)

@@ -65,7 +65,7 @@ public class ShopDaoTest {
 		System.out.println(shop);
 	}
 	@Test
-	@Ignore
+//	@Ignore
 	public void testQuery() {
 		Shop shop = new Shop();
 		
@@ -85,16 +85,17 @@ public class ShopDaoTest {
 //		shop.setEnableStatus(1);
 //		shop.setShopName("米");
 		
-		PersonInfo owner = new PersonInfo();
-		owner.setPersonId(1L);
-		shop.setOwner(owner);
-		
+//		PersonInfo owner = new PersonInfo();
+//		owner.setPersonId(1L);
+//		shop.setOwner(owner);
+//		shop.setShopName("");
 		List<Shop> list = shopDao.queryShop(shop, 0, 100);
 		System.out.println(list);
 		int i = shopDao.queryShopCount(shop);
-		System.out.println(i);
+		System.out.println("i="+i);
 	}
 	@Test
+	@Ignore
 	public void testUpdate() {
 		Shop shop = new Shop();
 		shop.setShopId(1L);

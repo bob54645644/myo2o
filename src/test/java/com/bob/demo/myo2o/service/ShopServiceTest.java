@@ -42,15 +42,17 @@ public class ShopServiceTest {
 //		owner.setPersonId(1L);
 //		shop.setOwner(owner);
 		ShopCategory shopCategory = new ShopCategory();
-		shopCategory.setShopCategoryId(1L);
+//		shopCategory.setShopCategoryId(1L);
+		Area area = new Area();
 //		ShopCategory parent = new ShopCategory();
 //		parent.setShopCategoryId(1L);
 //		shopCategory.setParent(parent);
-		List<ShopCategory> list = shopCategoryService.getShopCategory(shopCategory);
-		System.out.println(list.size());
-		
+//		List<ShopCategory> list = shopCategoryService.getShopCategory(shopCategory);
+//		System.out.println(list.size());
+//		
+//		shop.setShopCategory(shopCategory);
 		shop.setShopCategory(shopCategory);
-		
+		shop.setArea(area);
 		ShopExecution se = shopService.getShopListByCondition(shop, 0, 100);
 		System.out.println(se.getCount());
 		System.out.println(se.getShopList());
