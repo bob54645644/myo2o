@@ -51,7 +51,7 @@ public class WebConfig implements WebMvcConfigurer{
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
 		registry.addInterceptor(shopAdminInterceptor).addPathPatterns("/shopadmin/**")
-		.excludePathPatterns("/shopadmin/login");
+		.excludePathPatterns("/shopadmin/login","/shopadmin/handlelogin");
 	}
 	
 }

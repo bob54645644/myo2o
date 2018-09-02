@@ -7,3 +7,39 @@
 2018-09-02 16:34:01.372 [restartedMain] INFO  com.bob.demo.myo2o.Myo2oApplication - Starting Myo2oApplication on DESKTOP-6V9R83N with PID 22908 (E:\eclipse-javaee\myo2o\target\classes started by DELL in E:\eclipse-javaee\myo2o)
 2018-09-02 16:34:01.379 [restartedMain] INFO  com.bob.demo.myo2o.Myo2oApplication - No active profile set, falling back to default profiles: default
 2018-09-02 16:34:08.569 [restartedMain] INFO  com.bob.demo.myo2o.Myo2oApplication - Started Myo2oApplication in 7.56 seconds (JVM running for 8.434)
+2018-09-02 21:14:58.616 [main] INFO  com.bob.demo.myo2o.dao.LocalAuthDaoTest - Starting LocalAuthDaoTest on DESKTOP-6V9R83N with PID 4364 (started by DELL in E:\eclipse-javaee\myo2o)
+2018-09-02 21:14:58.673 [main] INFO  com.bob.demo.myo2o.dao.LocalAuthDaoTest - No active profile set, falling back to default profiles: default
+2018-09-02 21:15:05.187 [main] INFO  com.bob.demo.myo2o.dao.LocalAuthDaoTest - Started LocalAuthDaoTest in 6.89 seconds (JVM running for 9.055)
+2018-09-02 21:16:40.326 [main] INFO  com.bob.demo.myo2o.dao.LocalAuthDaoTest - Starting LocalAuthDaoTest on DESKTOP-6V9R83N with PID 26164 (started by DELL in E:\eclipse-javaee\myo2o)
+2018-09-02 21:16:40.330 [main] INFO  com.bob.demo.myo2o.dao.LocalAuthDaoTest - No active profile set, falling back to default profiles: default
+2018-09-02 21:16:46.922 [main] INFO  com.bob.demo.myo2o.dao.LocalAuthDaoTest - Started LocalAuthDaoTest in 6.94 seconds (JVM running for 8.515)
+2018-09-02 21:17:42.331 [main] INFO  com.bob.demo.myo2o.dao.LocalAuthDaoTest - Starting LocalAuthDaoTest on DESKTOP-6V9R83N with PID 21400 (started by DELL in E:\eclipse-javaee\myo2o)
+2018-09-02 21:17:42.338 [main] INFO  com.bob.demo.myo2o.dao.LocalAuthDaoTest - No active profile set, falling back to default profiles: default
+2018-09-02 21:17:47.664 [main] INFO  com.bob.demo.myo2o.dao.LocalAuthDaoTest - Started LocalAuthDaoTest in 5.635 seconds (JVM running for 6.998)
+2018-09-02 21:18:21.998 [main] INFO  com.bob.demo.myo2o.dao.LocalAuthDaoTest - Starting LocalAuthDaoTest on DESKTOP-6V9R83N with PID 20724 (started by DELL in E:\eclipse-javaee\myo2o)
+2018-09-02 21:18:22.002 [main] INFO  com.bob.demo.myo2o.dao.LocalAuthDaoTest - No active profile set, falling back to default profiles: default
+2018-09-02 21:18:27.557 [main] INFO  com.bob.demo.myo2o.dao.LocalAuthDaoTest - Started LocalAuthDaoTest in 5.89 seconds (JVM running for 7.295)
+2018-09-02 21:23:00.172 [main] INFO  com.bob.demo.myo2o.dao.LocalAuthDaoTest - Starting LocalAuthDaoTest on DESKTOP-6V9R83N with PID 25140 (started by DELL in E:\eclipse-javaee\myo2o)
+2018-09-02 21:23:00.175 [main] INFO  com.bob.demo.myo2o.dao.LocalAuthDaoTest - No active profile set, falling back to default profiles: default
+2018-09-02 21:23:05.579 [main] INFO  com.bob.demo.myo2o.dao.LocalAuthDaoTest - Started LocalAuthDaoTest in 5.785 seconds (JVM running for 7.143)
+2018-09-02 21:28:56.085 [main] INFO  com.bob.demo.myo2o.dao.LocalAuthDaoTest - Starting LocalAuthDaoTest on DESKTOP-6V9R83N with PID 31424 (started by DELL in E:\eclipse-javaee\myo2o)
+2018-09-02 21:28:56.090 [main] INFO  com.bob.demo.myo2o.dao.LocalAuthDaoTest - No active profile set, falling back to default profiles: default
+2018-09-02 21:29:01.447 [main] INFO  com.bob.demo.myo2o.dao.LocalAuthDaoTest - Started LocalAuthDaoTest in 5.712 seconds (JVM running for 7.133)
+2018-09-02 21:29:25.344 [main] INFO  com.bob.demo.myo2o.dao.LocalAuthDaoTest - Starting LocalAuthDaoTest on DESKTOP-6V9R83N with PID 17436 (started by DELL in E:\eclipse-javaee\myo2o)
+2018-09-02 21:29:25.347 [main] INFO  com.bob.demo.myo2o.dao.LocalAuthDaoTest - No active profile set, falling back to default profiles: default
+2018-09-02 21:29:30.777 [main] INFO  com.bob.demo.myo2o.dao.LocalAuthDaoTest - Started LocalAuthDaoTest in 5.836 seconds (JVM running for 7.233)
+2018-09-02 21:30:01.241 [main] INFO  com.bob.demo.myo2o.dao.LocalAuthDaoTest - Starting LocalAuthDaoTest on DESKTOP-6V9R83N with PID 13996 (started by DELL in E:\eclipse-javaee\myo2o)
+2018-09-02 21:30:01.244 [main] INFO  com.bob.demo.myo2o.dao.LocalAuthDaoTest - No active profile set, falling back to default profiles: default
+2018-09-02 21:30:06.470 [main] INFO  com.bob.demo.myo2o.dao.LocalAuthDaoTest - Started LocalAuthDaoTest in 5.637 seconds (JVM running for 7.045)
+2018-09-02 21:30:59.688 [main] INFO  com.bob.demo.myo2o.dao.LocalAuthDaoTest - Starting LocalAuthDaoTest on DESKTOP-6V9R83N with PID 29496 (started by DELL in E:\eclipse-javaee\myo2o)
+2018-09-02 21:30:59.692 [main] INFO  com.bob.demo.myo2o.dao.LocalAuthDaoTest - No active profile set, falling back to default profiles: default
+2018-09-02 21:31:05.471 [main] INFO  com.bob.demo.myo2o.dao.LocalAuthDaoTest - Started LocalAuthDaoTest in 6.131 seconds (JVM running for 7.574)
+2018-09-02 21:58:10.737 [restartedMain] INFO  com.bob.demo.myo2o.Myo2oApplication - Starting Myo2oApplication on DESKTOP-6V9R83N with PID 2232 (E:\eclipse-javaee\myo2o\target\classes started by DELL in E:\eclipse-javaee\myo2o)
+2018-09-02 21:58:10.746 [restartedMain] INFO  com.bob.demo.myo2o.Myo2oApplication - No active profile set, falling back to default profiles: default
+2018-09-02 21:58:19.171 [restartedMain] INFO  com.bob.demo.myo2o.Myo2oApplication - Started Myo2oApplication in 8.897 seconds (JVM running for 9.946)
+2018-09-02 22:18:34.923 [restartedMain] INFO  com.bob.demo.myo2o.Myo2oApplication - Starting Myo2oApplication on DESKTOP-6V9R83N with PID 14384 (E:\eclipse-javaee\myo2o\target\classes started by DELL in E:\eclipse-javaee\myo2o)
+2018-09-02 22:18:34.929 [restartedMain] INFO  com.bob.demo.myo2o.Myo2oApplication - No active profile set, falling back to default profiles: default
+2018-09-02 22:18:42.280 [restartedMain] INFO  com.bob.demo.myo2o.Myo2oApplication - Started Myo2oApplication in 7.876 seconds (JVM running for 8.901)
+2018-09-02 22:20:41.384 [restartedMain] INFO  com.bob.demo.myo2o.Myo2oApplication - Starting Myo2oApplication on DESKTOP-6V9R83N with PID 9300 (E:\eclipse-javaee\myo2o\target\classes started by DELL in E:\eclipse-javaee\myo2o)
+2018-09-02 22:20:41.390 [restartedMain] INFO  com.bob.demo.myo2o.Myo2oApplication - No active profile set, falling back to default profiles: default
+2018-09-02 22:20:48.557 [restartedMain] INFO  com.bob.demo.myo2o.Myo2oApplication - Started Myo2oApplication in 7.542 seconds (JVM running for 8.665)

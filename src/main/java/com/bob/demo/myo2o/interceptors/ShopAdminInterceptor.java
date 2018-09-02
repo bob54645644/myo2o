@@ -25,7 +25,7 @@ public class ShopAdminInterceptor implements HandlerInterceptor{
 		if(userObj != null) {
 			try {
 				PersonInfo user = (PersonInfo)userObj;
-				if(user !=null && user.getPersonId()!=null && user.getEnableStatus()==1) {
+				if(user !=null && user.getPersonId()!=null) {
 					return true;
 				}
 			}catch(Exception e) {

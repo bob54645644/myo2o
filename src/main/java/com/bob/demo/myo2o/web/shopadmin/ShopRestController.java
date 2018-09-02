@@ -18,6 +18,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.multipart.MultipartResolver;
 
+import com.bob.demo.myo2o.dto.LocalAuthExecution;
 import com.bob.demo.myo2o.dto.ProductCategoryExecution;
 import com.bob.demo.myo2o.dto.ShopExecution;
 import com.bob.demo.myo2o.entity.Area;
@@ -25,10 +26,12 @@ import com.bob.demo.myo2o.entity.PersonInfo;
 import com.bob.demo.myo2o.entity.ProductCategory;
 import com.bob.demo.myo2o.entity.Shop;
 import com.bob.demo.myo2o.entity.ShopCategory;
+import com.bob.demo.myo2o.enums.LocalAuthStateEnum;
 import com.bob.demo.myo2o.enums.ProductCategoryStateEnum;
 import com.bob.demo.myo2o.enums.ShopStateEnum;
 import com.bob.demo.myo2o.exceptions.ProductOperationalException;
 import com.bob.demo.myo2o.service.AreaService;
+import com.bob.demo.myo2o.service.LocalAuthService;
 import com.bob.demo.myo2o.service.ProductCategoryService;
 import com.bob.demo.myo2o.service.ShopCategoryService;
 import com.bob.demo.myo2o.service.ShopService;
@@ -53,6 +56,8 @@ public class ShopRestController {
 
 	@Autowired
 	private ProductCategoryService productCategoryService;
+	@Autowired
+	private LocalAuthService localAuthService;
 
 	// 处理图片流
 	@Autowired
@@ -229,10 +234,10 @@ public class ShopRestController {
 	public Map<String, Object> getShopList(HttpServletRequest request) {
 		Map<String, Object> modelMap = new HashMap<>();
 		// 从session中获取personinfo，前期先硬编码创建
-		PersonInfo user = new PersonInfo();
-		user.setPersonId(1L);
-		user.setPersonName("xiu");
-		request.getSession().setAttribute("user", user);
+//		PersonInfo user = new PersonInfo();
+//		user.setPersonId(1L);
+//		user.setPersonName("xiu");
+//		request.getSession().setAttribute("user", user);
 
 		PersonInfo nowUser = (PersonInfo) request.getSession().getAttribute("user");
 		if (nowUser == null || nowUser.getPersonId() == null) {
@@ -390,7 +395,25 @@ public class ShopRestController {
 	}
 	//处理登录
 	@PostMapping("/handlelogin")
-	public void handleLogin(HttpServletRequest request) {
-		
+	public Map<String,Object> handleLogin(HttpServletRequest request) {
+		Map<String,Object> modelMap = new HashMap<>();
+		String username = HttpServletRequestUtil.getString(request, "username");
+		String password = HttpServletRequestUtil.getString(request, "password");
+		if(username !=null && password !=null) {
+			LocalAuthExecution lae = localAuthService.getLocalAuthByUserNameAndPwd(username, password);
+			if(lae.getState() == LocalAuthStateEnum.SUCCESS.getState()) {
+				PersonInfo user = new PersonInfo();
+				user.setPersonId(lae.getLocalAuth().getPersonInfo().getPersonId());
+				request.getSession().setAttribute("user", user);
+				modelMap.put("success", true);
+			}else {
+				modelMap.put("success", false);
+				modelMap.put("errMsg", lae.getStateInfo());
+			}
+		}else {
+			modelMap.put("success", false);
+			modelMap.put("errMsg", "请输入用户名或密码！");
+		}
+		return modelMap;
 	}
 }

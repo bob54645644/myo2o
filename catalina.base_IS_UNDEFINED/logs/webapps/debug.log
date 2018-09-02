@@ -805,3 +805,42 @@
 2018-09-02 16:50:38.170 [http-nio-8080-exec-3] DEBUG com.bob.demo.myo2o.dao.ProductDao.queryById - ==>  Preparing: SELECT p.`product_id`, p.`product_name`, p.`product_desc`, p.`product_img`, p.`normal_price`, p.`promotion_price`, p.`priority` product_priority, p.`create_time` p_create_time, p.`last_edit_time`, p.`enable_status`, p.`shop_id`, p.`product_category_id`, pi.img_id, pi.img_addr, pi.img_desc, pi.priority, pi.create_time pi_create_time FROM `tb_product` p left join tb_product_img pi on p.product_id = pi.product_id where p.product_id = ? order by pi.priority desc 
 2018-09-02 16:50:38.171 [http-nio-8080-exec-3] DEBUG com.bob.demo.myo2o.dao.ProductDao.queryById - ==> Parameters: 15(Long)
 2018-09-02 16:50:38.173 [http-nio-8080-exec-3] DEBUG com.bob.demo.myo2o.dao.ProductDao.queryById - <==      Total: 4
+2018-09-02 21:14:58.663 [main] DEBUG com.bob.demo.myo2o.dao.LocalAuthDaoTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-02 21:15:06.269 [main] DEBUG c.bob.demo.myo2o.dao.LocalAuthDao.insertLocalAuth - ==>  Preparing: insert into tb_local_auth (`username`, `password`, `create_time`, `last_edit_time`, `person_info_id`) values ( ?, ?, ?, ?, ? ) 
+2018-09-02 21:16:40.327 [main] DEBUG com.bob.demo.myo2o.dao.LocalAuthDaoTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-02 21:16:47.754 [main] DEBUG c.bob.demo.myo2o.dao.LocalAuthDao.insertLocalAuth - ==>  Preparing: insert into tb_local_auth (`username`, `password`, `create_time`, `last_edit_time`, `person_info_id`) values ( ?, ?, ?, ?, ? ) 
+2018-09-02 21:16:47.811 [main] DEBUG c.bob.demo.myo2o.dao.LocalAuthDao.insertLocalAuth - ==> Parameters: test(String), password(String), 2018-09-02 21:16:47.362(Timestamp), 2018-09-02 21:16:47.362(Timestamp), 1(Long)
+2018-09-02 21:16:47.850 [main] DEBUG c.bob.demo.myo2o.dao.LocalAuthDao.insertLocalAuth - <==    Updates: 1
+2018-09-02 21:17:42.333 [main] DEBUG com.bob.demo.myo2o.dao.LocalAuthDaoTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-02 21:17:48.315 [main] DEBUG c.bob.demo.myo2o.dao.LocalAuthDao.insertLocalAuth - ==>  Preparing: insert into tb_local_auth (`username`, `password`, `create_time`, `last_edit_time`, `person_info_id`) values ( ?, ?, ?, ?, ? ) 
+2018-09-02 21:17:48.377 [main] DEBUG c.bob.demo.myo2o.dao.LocalAuthDao.insertLocalAuth - ==> Parameters: test(String), password(String), 2018-09-02 21:17:47.908(Timestamp), 2018-09-02 21:17:47.908(Timestamp), 1(Long)
+2018-09-02 21:18:21.999 [main] DEBUG com.bob.demo.myo2o.dao.LocalAuthDaoTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-02 21:18:28.503 [main] DEBUG c.bob.demo.myo2o.dao.LocalAuthDao.insertLocalAuth - ==>  Preparing: insert into tb_local_auth (`username`, `password`, `create_time`, `last_edit_time`, `person_info_id`) values ( ?, ?, ?, ?, ? ) 
+2018-09-02 21:18:28.600 [main] DEBUG c.bob.demo.myo2o.dao.LocalAuthDao.insertLocalAuth - ==> Parameters: test1(String), password(String), 2018-09-02 21:18:27.889(Timestamp), 2018-09-02 21:18:27.889(Timestamp), 1(Long)
+2018-09-02 21:18:28.710 [main] DEBUG c.bob.demo.myo2o.dao.LocalAuthDao.insertLocalAuth - <==    Updates: 1
+2018-09-02 21:23:00.173 [main] DEBUG com.bob.demo.myo2o.dao.LocalAuthDaoTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-02 21:23:06.214 [main] DEBUG c.b.d.myo2o.dao.LocalAuthDao.queryByUserNameAndPwd - ==>  Preparing: select `local_auth_id`, `username`, `password`, `create_time`, `last_edit_time`, `person_info_id` from tb_local_auth where username=? and password = ? 
+2018-09-02 21:23:06.248 [main] DEBUG c.b.d.myo2o.dao.LocalAuthDao.queryByUserNameAndPwd - ==> Parameters: test(String), password(String)
+2018-09-02 21:23:06.344 [main] DEBUG c.b.d.myo2o.dao.LocalAuthDao.queryByUserNameAndPwd - <==      Total: 1
+2018-09-02 21:28:56.088 [main] DEBUG com.bob.demo.myo2o.dao.LocalAuthDaoTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-02 21:29:02.004 [main] DEBUG c.bob.demo.myo2o.dao.LocalAuthDao.updateLocalAuth - ==>  Preparing: update tb_local_auth set last_edit_time = ?, `password`= ? where `username` = ? and person_info_id = ? and password = ? 
+2018-09-02 21:29:02.051 [main] DEBUG c.bob.demo.myo2o.dao.LocalAuthDao.updateLocalAuth - ==> Parameters: 2018-09-02 21:29:01.579(Timestamp), newPassword(String), test1(String), 1(Long), password(String)
+2018-09-02 21:29:02.209 [main] DEBUG c.bob.demo.myo2o.dao.LocalAuthDao.updateLocalAuth - <==    Updates: 1
+2018-09-02 21:29:25.345 [main] DEBUG com.bob.demo.myo2o.dao.LocalAuthDaoTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-02 21:29:31.349 [main] DEBUG c.bob.demo.myo2o.dao.LocalAuthDao.updateLocalAuth - ==>  Preparing: update tb_local_auth set last_edit_time = ?, `password`= ? where `username` = ? and person_info_id = ? and password = ? 
+2018-09-02 21:29:31.385 [main] DEBUG c.bob.demo.myo2o.dao.LocalAuthDao.updateLocalAuth - ==> Parameters: 2018-09-02 21:29:30.932(Timestamp), newPassword(String), test1(String), 1(Long), password(String)
+2018-09-02 21:29:31.386 [main] DEBUG c.bob.demo.myo2o.dao.LocalAuthDao.updateLocalAuth - <==    Updates: 0
+2018-09-02 21:30:01.242 [main] DEBUG com.bob.demo.myo2o.dao.LocalAuthDaoTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-02 21:30:07.016 [main] DEBUG c.bob.demo.myo2o.dao.LocalAuthDao.updateLocalAuth - ==>  Preparing: update tb_local_auth set last_edit_time = ?, `password`= ? where `username` = ? and person_info_id = ? and password = ? 
+2018-09-02 21:30:07.061 [main] DEBUG c.bob.demo.myo2o.dao.LocalAuthDao.updateLocalAuth - ==> Parameters: 2018-09-02 21:30:06.613(Timestamp), newPassword(String), test1(String), 1(Long), passwordddd(String)
+2018-09-02 21:30:07.063 [main] DEBUG c.bob.demo.myo2o.dao.LocalAuthDao.updateLocalAuth - <==    Updates: 0
+2018-09-02 21:30:59.689 [main] DEBUG com.bob.demo.myo2o.dao.LocalAuthDaoTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-02 21:31:06.062 [main] DEBUG c.bob.demo.myo2o.dao.LocalAuthDao.updateLocalAuth - ==>  Preparing: update tb_local_auth set last_edit_time = ?, `password`= ? where `username` = ? and person_info_id = ? and password = ? 
+2018-09-02 21:31:06.109 [main] DEBUG c.bob.demo.myo2o.dao.LocalAuthDao.updateLocalAuth - ==> Parameters: 2018-09-02 21:31:05.622(Timestamp), Password(String), test1(String), 1(Long), passwordddd(String)
+2018-09-02 21:31:06.111 [main] DEBUG c.bob.demo.myo2o.dao.LocalAuthDao.updateLocalAuth - <==    Updates: 0
+2018-09-02 21:58:10.743 [restartedMain] DEBUG com.bob.demo.myo2o.Myo2oApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-02 22:18:34.927 [restartedMain] DEBUG com.bob.demo.myo2o.Myo2oApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-02 22:20:41.388 [restartedMain] DEBUG com.bob.demo.myo2o.Myo2oApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-02 22:21:08.927 [http-nio-8080-exec-5] DEBUG c.b.d.myo2o.dao.LocalAuthDao.queryByUserNameAndPwd - ==>  Preparing: select `local_auth_id`, `username`, `password`, `create_time`, `last_edit_time`, `person_info_id` from tb_local_auth where username=? and password = ? 
+2018-09-02 22:21:08.972 [http-nio-8080-exec-5] DEBUG c.b.d.myo2o.dao.LocalAuthDao.queryByUserNameAndPwd - ==> Parameters: test(String), password(String)
+2018-09-02 22:21:08.997 [http-nio-8080-exec-5] DEBUG c.b.d.myo2o.dao.LocalAuthDao.queryByUserNameAndPwd - <==      Total: 1

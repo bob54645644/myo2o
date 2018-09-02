@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bob.demo.myo2o.dao.LocalAuthDao">
+	<resultMap type="com.bob.demo.myo2o.entity.LocalAuth"
+		id="LocalAuthResultMap">
+		<id column="local_auth_id" property="localAuthId" />
+		<result column="username" property="username" />
+		<result column="password" property="password" />
+		<result column="create_time" property="createTime" />
+		<result column="last_edit_time" property="lastEditTime" />
+		<association property="personInfo"
+			javaType="com.bob.demo.myo2o.entity.PersonInfo">
+			<id column="person_info_id" property="personId" />
+		</association>
+	</resultMap>
+	<!-- 新增 -->
+	<insert id="insertLocalAuth"
+		parameterType="com.bob.demo.myo2o.entity.LocalAuth"
+		useGeneratedKeys="true" keyColumn="local_auth_id"
+		keyProperty="localAuthId">
+		insert into
+		tb_local_auth
+		(`username`,
+		`password`,
+		`create_time`,
+		`last_edit_time`,
+		`person_info_id`)
+		values
+		(
+		#{username},
+		#{password},
+		#{createTime},
+		#{lastEditTime},
+		#{personInfo.personId}
+		)
+	</insert>
+	<!-- 查询，通过username和password -->
+	<select id="queryByUserNameAndPwd"
+		resultMap="LocalAuthResultMap">
+		select
+		`local_auth_id`,
+		`username`,
+		`password`,
+		`create_time`,
+		`last_edit_time`,
+		`person_info_id`
+		from
+		tb_local_auth
+		where
+		username=#{username}
+		and
+		password = #{password}
+	</select>
+	<!-- 修改密码 -->
+	<update id="updateLocalAuth" >
+	update
+	tb_local_auth
+	set
+	last_edit_time = #{lastEditTime},
+	`password`= #{newPassword}
+	where
+	`username` = #{username}
+	and
+	person_info_id = #{personInfoId}
+	and
+	password = #{oldPassword}
+	
+	
+	</update>
+</mapper>
