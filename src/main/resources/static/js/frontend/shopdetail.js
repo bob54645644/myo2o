@@ -80,7 +80,7 @@ $(function(){
 						+'<ul>'
 						+'<li class="item-content">'
 						+'<div class="item-media">'
-						+'<a href="/frontend/productdetail?productId='+item.productId+'">'
+						+'<a href="/frontend/productdetail?productId='+item.productId+'" external>'
 						+'<img src="'+item.productImg+'" width="44"></a>'
 						+'</div>'
 						+'<div class="item-inner">'
@@ -138,6 +138,10 @@ $(function(){
 		$('#product-wrap').empty();
 		pageNum = 1;
 		addItems(pageNum,pageSize);
+	});
+	// 点击后打开右侧栏
+	$('#me').click(function() {
+		$.openPanel('#panel-right-demo');
 	});
 	$.init();
 });

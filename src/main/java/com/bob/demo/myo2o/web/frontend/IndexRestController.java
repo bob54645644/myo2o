@@ -217,5 +217,26 @@ public class IndexRestController {
 		}
 		return modelMap;
 	}
+	//商品详情
+	@GetMapping("/getproductdetail")
+	public Map<String,Object> getProductDetail(HttpServletRequest request){
+		Map<String ,Object> modelMap = new HashMap<>();
+		//获取productId
+		long productId = HttpServletRequestUtil.getLong(request, "productId");
+		if(productId>-1) {
+			try {
+				Product product = productService.getProductById(productId);
+				modelMap.put("success", true);
+				modelMap.put("product", product);
+			}catch (Exception e) {
+				modelMap.put("success", false);
+				modelMap.put("errMsg", e.getMessage());
+			}
+		}else {
+			modelMap.put("success", false);
+			modelMap.put("errMsg","shopId获取失败！");
+		}
+		return modelMap;
+	}
 
 }

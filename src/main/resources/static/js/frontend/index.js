@@ -31,5 +31,10 @@ $(function() {
 		autoplay : 3000,
 		autoplayDisableOnInteraction : false
 	});
+	
+	// 点击后打开右侧栏
+	$('#me').click(function() {
+		$.openPanel('#panel-right-demo');
+	});
 	$.init();
 });

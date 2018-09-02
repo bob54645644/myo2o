@@ -32,4 +32,9 @@ public class ShopController {
 	public String productCategoryManagement() {
 		return "shopadmin/productcategorymanagement";
 	}
+	//登录页
+	@GetMapping("/login")
+	public String login() {
+		return "shopadmin/login";
+	}
 }

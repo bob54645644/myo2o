@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>商品详情</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<link rel="stylesheet"
+	href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+<link rel="stylesheet"
+	href="//g.alicdn.com/msui/sm/0.6.2/css/sm-extend.min.css">
+</head>
+<body>
+	<div class="page-group">
+		<div class="page page-current">
+
+
+
+			<!-- 你的html代码 -->
+			<!-- 标题 -->
+			<header class="bar bar-nav">
+				<a href="javascript:history.back(-1)" external
+					class="button button-link button-nav pull-left"> <span
+					class="icon icon-left"></span> 返回
+				</a>
+				<h1 class="title" id="product-name">商品名称</h1>
+			</header>
+			<!-- 导航栏 -->
+			<nav class="bar bar-tab">
+				<a class="tab-item" href="/frontend/index" external> <span
+					class="icon icon-home"></span> <span class="tab-label">首页</span>
+				</a> <a class="tab-item" href="#" id="me"> <span
+					class="icon icon-me"></span> <span class="tab-label">我</span>
+				</a>
+			</nav>
+			<!-- 内容 -->
+			<div class="content">
+				<!-- 商品详情,卡片 -->
+				<div id="product-detail">
+					<div class="card demo-card-header-pic">
+						<div valign="bottom"
+							class="card-header color-white no-border no-padding">
+							<img class='card-cover' id="product-img"
+								src="//gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg"
+								alt="">
+						</div>
+						<div class="card-content">
+							<div class="card-content-inner">
+								<p class="color-gray" id="edit-time">最后修改时间</p>
+								<!-- 价格 -->
+								<p id="price">
+									<span class="color-gray" id="normalPrice"><del>￥1.0</del></span>
+									<span><font color="red" size="4" id="promotionPrice">￥0.9</font></span>
+								</p>
+								<p id="product-desc">商品描述</p>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<!--详情图  -->
+				<div id="product-imgs">
+					<img alt=""
+						src="/upload/item/shop/2/product/12/4306020180829132103.jpg"
+						width="100%"> <img alt=""
+						src="/upload/item/shop/2/product/12/1528520180829132103.jpg"
+						width="100%">
+
+				</div>
+
+			</div>
+
+
+		</div>
+		<div class="panel-overlay"></div>
+		<div class="panel panel-right panel-reveal" id="panel-right-demo">
+			<div class="content-block">
+				<p>
+					<a href="/o2o/local/accountbind?usertype=1" class="close-panel">绑定帐号</a>
+				</p>
+				<p>
+					<a href="/o2o/local/changepsw?usertype=1" class="close-panel">修改密码</a>
+				</p>
+				<p>
+					<a href="#" usertype="1" class="close-panel" id="log-out">登出系统</a>
+				</p>
+				<!-- Click on link with "close-panel" class will close panel -->
+			</div>
+		</div>
+	</div>
+
+	<script type='text/javascript'
+		src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+	<script type='text/javascript'
+		src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+	<script type='text/javascript'
+		src='//g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
+
+	<script type='text/javascript' src='/js/commons/common.js'
+		charset='utf-8'></script>
+	<script type='text/javascript' src='/js/frontend/productdetail.js'
+		charset='utf-8'></script>
+</body>
+</html>

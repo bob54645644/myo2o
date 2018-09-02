@@ -1,12 +1,15 @@
 package com.bob.demo.myo2o.config;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import com.bob.demo.myo2o.interceptors.ShopAdminInterceptor;
 import com.bob.demo.myo2o.utils.PathUtil;
 import com.google.code.kaptcha.servlet.KaptchaServlet;
 
@@ -17,6 +20,10 @@ import com.google.code.kaptcha.servlet.KaptchaServlet;
 */
 @Configuration
 public class WebConfig implements WebMvcConfigurer{
+	
+	//拦截器
+	@Autowired
+	private ShopAdminInterceptor shopAdminInterceptor;
 	//验证码
 	@Bean
 	public ServletRegistrationBean<KaptchaServlet> servletRegistrationBean(){
@@ -32,11 +39,19 @@ public class WebConfig implements WebMvcConfigurer{
 		bean.addInitParameter("kaptcha.textproducer.font.names", "Arial");// 字体
 		return bean;
 	}
-
+	
+	//静态资源映射路径
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		
 		registry.addResourceHandler("/upload/**").addResourceLocations("file:"+PathUtil.getImageBasePath()+"/upload/");
+	}
+	//拦截器
+
+	@Override
+	public void addInterceptors(InterceptorRegistry registry) {
+		registry.addInterceptor(shopAdminInterceptor).addPathPatterns("/shopadmin/**")
+		.excludePathPatterns("/shopadmin/login");
 	}
 	
 }

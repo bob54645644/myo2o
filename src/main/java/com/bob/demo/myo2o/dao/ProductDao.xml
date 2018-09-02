@@ -13,7 +13,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result column="promotion_price" property="promotionPrice" />
 		<result column="product_priority" property="priority" />
 		<result column="p_create_time" property="createTime" />
-		<result column="last_eite_time" property="lastEditTime" />
+		<result column="last_edit_time" property="lastEditTime" />
 		<result column="enable_status" property="enableStatus" />
 
 		<association property="productCategory"

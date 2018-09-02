@@ -388,5 +388,9 @@ public class ShopRestController {
 		}
 		return modelMap;
 	}
-
+	//处理登录
+	@PostMapping("/handlelogin")
+	public void handleLogin(HttpServletRequest request) {
+		
+	}
 }
