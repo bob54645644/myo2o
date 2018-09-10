@@ -3,6 +3,8 @@ package com.bob.demo.myo2o.service.impl;
 import java.io.IOException;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -26,6 +28,8 @@ import com.bob.demo.myo2o.utils.ThumbnailUtil;
 @Service
 public class ShopServiceImpl implements ShopService{
 	
+	Logger logger = LoggerFactory.getLogger(ShopServiceImpl.class);
+	
 	@Autowired
 	private ShopDao shopDao;
 	//根据条件获取店铺列表
@@ -42,10 +46,12 @@ public class ShopServiceImpl implements ShopService{
 				int count = shopDao.queryShopCount(shopCondition);
 				se = new ShopExecution(ShopStateEnum.SUCCESS, count, shopList);
 			}catch(Exception e) {
+				logger.error("获取店铺列表失败");
 				se = new ShopExecution(ShopStateEnum.INNER_ERROR);
 			}
 			return se;
 		}else {
+			logger.error("获取店铺列表，信息为空");
 			return new ShopExecution(ShopStateEnum.EMPTY);
 		}
 	}
@@ -59,9 +65,11 @@ public class ShopServiceImpl implements ShopService{
 			try {
 				int effectedNum = shopDao.insertShop(shop);
 				if(effectedNum<=0) {
+					logger.error("新增shop失败");
 					throw new ShopOperationalException("新增店铺操作失败！");
 				}
 			}catch(ShopOperationalException e) {
+				logger.error("新增shop失败");
 				return new ShopExecution(ShopStateEnum.INNER_ERROR);
 			}
 			//处理缩略图
@@ -70,21 +78,26 @@ public class ShopServiceImpl implements ShopService{
 			try {
 				String relativePath = ThumbnailUtil.generateThumbnail(imageHolder, targetAddr);
 				shop.setShopImg(relativePath);
+				logger.debug("处理shop缩略图成功");
 			}catch(Exception e) {
+				logger.error("处理shop缩略图失败");
 				throw new ShopOperationalException(e.getMessage());
 			}
 			//更新数据库的shopImg
 			try {
 				int effectedNum2 = shopDao.updateShop(shop);
 				if(effectedNum2 <=0) {
+					logger.error("新增shop缩略图失败");
 					throw new ShopOperationalException("更新店铺缩略图失败");
 				}
 			}catch(Exception e) {
+				logger.error("新增shop缩略图失败");
 				throw new ShopOperationalException("更新店铺缩略图失败！");
 			}
-			
+			logger.debug("新增shop成功");
 			return new ShopExecution(ShopStateEnum.SUCCESS);
 		}else {
+			logger.debug("新增shop,信息为空");
 			return new ShopExecution(ShopStateEnum.EMPTY);
 		}
 	}
@@ -116,8 +129,10 @@ public class ShopServiceImpl implements ShopService{
 				try {
 					String newImg = ThumbnailUtil.generateThumbnail(imageHolder, getTargetAddr(shop));
 					shop.setShopImg(newImg);
+					logger.debug("编辑店铺，修改缩略图成功");
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
+					logger.error("编辑店铺，修改缩略图失败");
 					return new ShopExecution(ShopStateEnum.INNER_ERROR);
 				}
 				
@@ -126,13 +141,17 @@ public class ShopServiceImpl implements ShopService{
 			try {
 				int effectedNum = shopDao.updateShop(shop);
 				if(effectedNum<=0){
+					logger.error("修改店铺失败");
 					throw new ShopOperationalException("更新店铺信息失败");
 				}
 			}catch(Exception e) {
+				logger.error("修改店铺失败");
 				return new ShopExecution(ShopStateEnum.INNER_ERROR);
 			}
+			logger.debug("修改店铺成功");
 			return new ShopExecution(ShopStateEnum.SUCCESS);
 		}else {
+			logger.debug("修改店铺，信息为空");
 			return new ShopExecution(ShopStateEnum.EMPTY);
 		}
 		

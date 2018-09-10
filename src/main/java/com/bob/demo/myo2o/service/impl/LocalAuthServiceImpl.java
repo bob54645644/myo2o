@@ -2,6 +2,8 @@ package com.bob.demo.myo2o.service.impl;
 
 import java.util.Date;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -19,6 +21,9 @@ import com.bob.demo.myo2o.service.LocalAuthService;
 */
 @Service
 public class LocalAuthServiceImpl implements LocalAuthService{
+	
+	Logger logger = LoggerFactory.getLogger(LocalAuthServiceImpl.class);
+	
 	@Autowired
 	private LocalAuthDao localAuthDao;
 
@@ -31,9 +36,11 @@ public class LocalAuthServiceImpl implements LocalAuthService{
 			if(effectedNum>0) {
 				return new LocalAuthExecution(LocalAuthStateEnum.SUCCESS);
 			}else {
+				logger.error("新增localAuth到表失败");
 				throw new RuntimeException("新增localAuth到表失败");
 			}
 		}catch(Exception e) {
+			logger.error(LocalAuthStateEnum.INNER_ERROR.getStateInfo());
 			return new LocalAuthExecution(LocalAuthStateEnum.INNER_ERROR);
 		}
 	}
@@ -46,9 +53,11 @@ public class LocalAuthServiceImpl implements LocalAuthService{
 			if(localAuth!=null) {
 				return new LocalAuthExecution(LocalAuthStateEnum.SUCCESS,localAuth);
 			}else {
+				logger.error(LocalAuthStateEnum.EMPTY.getStateInfo());
 				return new LocalAuthExecution(LocalAuthStateEnum.EMPTY);
 			}
 		}catch(Exception e) {
+			logger.error(LocalAuthStateEnum.EMPTY.getStateInfo());
 			return new LocalAuthExecution(LocalAuthStateEnum.EMPTY);
 		}
 	}
@@ -61,9 +70,11 @@ public class LocalAuthServiceImpl implements LocalAuthService{
 			if(effectedNum>0) {
 				return new LocalAuthExecution(LocalAuthStateEnum.SUCCESS);
 			}else {
+				logger.error("更新localAuth到表失败");
 				throw new RuntimeException("更新localAuth到表失败");
 			}
 		}catch(Exception e) {
+			logger.error(LocalAuthStateEnum.INNER_ERROR.getStateInfo());
 			return new LocalAuthExecution(LocalAuthStateEnum.INNER_ERROR);
 		}
 	}

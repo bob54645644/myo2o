@@ -1,0 +1,312 @@
+2018-09-10 08:50:55.277 [restartedMain] DEBUG com.bob.demo.myo2o.Myo2oApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-10 08:51:24.581 [http-nio-8080-exec-9] DEBUG c.b.d.m.d.HeadLineDao.queryHeadLineListByCondition - ==>  Preparing: select * from tb_head_line where enable_status=? order by priority desc 
+2018-09-10 08:51:24.611 [http-nio-8080-exec-9] DEBUG c.b.d.m.d.HeadLineDao.queryHeadLineListByCondition - ==> Parameters: 1(Integer)
+2018-09-10 08:51:24.755 [http-nio-8080-exec-9] DEBUG c.b.d.m.d.HeadLineDao.queryHeadLineListByCondition - <==      Total: 4
+2018-09-10 08:51:24.808 [http-nio-8080-exec-9] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT `shop_category_id`, `shop_category_name`, `shop_category_desc`, `shop_category_img`, `priority`, `create_time`, `last_edit_time`, `parent_id` FROM `tb_shop_category` WHERE parent_id is null order by priority desc 
+2018-09-10 08:51:24.809 [http-nio-8080-exec-9] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
+2018-09-10 08:51:24.822 [http-nio-8080-exec-9] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 2
+2018-09-10 08:51:31.200 [http-nio-8080-exec-7] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShop - ==>  Preparing: select s.`shop_id`, s.`shop_name`, s.`shop_desc`, s.`shop_addr`, s.`phone`, s.`shop_img`, s.`priority`, s.`create_time`, s.`last_edit_time`, s.`enable_status`, s.`advice`, a.`area_id`, a.area_name, sc.`shop_category_id`, sc.shop_category_name from tb_shop s, tb_shop_category sc, tb_area a WHERE s.area_id = a.area_id and s.shop_category_id = sc.shop_category_id order by priority desc limit ?,?; 
+2018-09-10 08:51:31.205 [http-nio-8080-exec-7] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShop - ==> Parameters: 0(Integer), 2(Integer)
+2018-09-10 08:51:31.208 [http-nio-8080-exec-6] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT `shop_category_id`, `shop_category_name`, `shop_category_desc`, `shop_category_img`, `priority`, `create_time`, `last_edit_time`, `parent_id` FROM `tb_shop_category` WHERE parent_id = ? order by priority desc 
+2018-09-10 08:51:31.210 [http-nio-8080-exec-6] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 1(Long)
+2018-09-10 08:51:31.216 [http-nio-8080-exec-6] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 3
+2018-09-10 08:51:31.217 [http-nio-8080-exec-6] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==>  Preparing: select * from tb_area order by priority desc 
+2018-09-10 08:51:31.217 [http-nio-8080-exec-6] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==> Parameters: 
+2018-09-10 08:51:31.220 [http-nio-8080-exec-6] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - <==      Total: 3
+2018-09-10 08:51:31.242 [http-nio-8080-exec-7] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShop - <==      Total: 2
+2018-09-10 08:51:31.243 [http-nio-8080-exec-7] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopCount - ==>  Preparing: select count(1) from tb_shop s, tb_shop_category sc, tb_area a WHERE s.area_id = a.area_id and s.shop_category_id = sc.shop_category_id 
+2018-09-10 08:51:31.243 [http-nio-8080-exec-7] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopCount - ==> Parameters: 
+2018-09-10 08:51:31.257 [http-nio-8080-exec-7] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopCount - <==      Total: 1
+2018-09-10 09:04:57.518 [restartedMain] DEBUG com.bob.demo.myo2o.Myo2oApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-10 09:17:20.828 [restartedMain] DEBUG com.bob.demo.myo2o.Myo2oApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-10 09:17:30.731 [http-nio-8080-exec-10] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT `shop_category_id`, `shop_category_name`, `shop_category_desc`, `shop_category_img`, `priority`, `create_time`, `last_edit_time`, `parent_id` FROM `tb_shop_category` WHERE parent_id is not null order by priority desc 
+2018-09-10 09:17:30.732 [http-nio-8080-exec-9] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShop - ==>  Preparing: select s.`shop_id`, s.`shop_name`, s.`shop_desc`, s.`shop_addr`, s.`phone`, s.`shop_img`, s.`priority`, s.`create_time`, s.`last_edit_time`, s.`enable_status`, s.`advice`, a.`area_id`, a.area_name, sc.`shop_category_id`, sc.shop_category_name from tb_shop s, tb_shop_category sc, tb_area a WHERE s.area_id = a.area_id and s.shop_category_id = sc.shop_category_id order by priority desc limit ?,?; 
+2018-09-10 09:17:30.759 [http-nio-8080-exec-10] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
+2018-09-10 09:17:30.759 [http-nio-8080-exec-9] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShop - ==> Parameters: 0(Integer), 2(Integer)
+2018-09-10 09:17:30.778 [http-nio-8080-exec-9] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShop - <==      Total: 2
+2018-09-10 09:17:30.778 [http-nio-8080-exec-10] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 4
+2018-09-10 09:17:30.785 [http-nio-8080-exec-10] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==>  Preparing: select * from tb_area order by priority desc 
+2018-09-10 09:17:30.785 [http-nio-8080-exec-9] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopCount - ==>  Preparing: select count(1) from tb_shop s, tb_shop_category sc, tb_area a WHERE s.area_id = a.area_id and s.shop_category_id = sc.shop_category_id 
+2018-09-10 09:17:30.785 [http-nio-8080-exec-9] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopCount - ==> Parameters: 
+2018-09-10 09:17:30.786 [http-nio-8080-exec-10] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==> Parameters: 
+2018-09-10 09:17:30.787 [http-nio-8080-exec-9] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopCount - <==      Total: 1
+2018-09-10 09:17:30.788 [http-nio-8080-exec-10] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - <==      Total: 3
+2018-09-10 09:17:46.282 [http-nio-8080-exec-7] DEBUG c.b.d.myo2o.dao.LocalAuthDao.queryByUserNameAndPwd - ==>  Preparing: select `local_auth_id`, `username`, `password`, `create_time`, `last_edit_time`, `person_info_id` from tb_local_auth where username=? and password = ? 
+2018-09-10 09:17:46.282 [http-nio-8080-exec-7] DEBUG c.b.d.myo2o.dao.LocalAuthDao.queryByUserNameAndPwd - ==> Parameters: test(String), password(String)
+2018-09-10 09:17:46.283 [http-nio-8080-exec-7] DEBUG c.b.d.myo2o.dao.LocalAuthDao.queryByUserNameAndPwd - <==      Total: 0
+2018-09-10 09:17:48.167 [http-nio-8080-exec-4] DEBUG c.b.d.myo2o.dao.LocalAuthDao.queryByUserNameAndPwd - ==>  Preparing: select `local_auth_id`, `username`, `password`, `create_time`, `last_edit_time`, `person_info_id` from tb_local_auth where username=? and password = ? 
+2018-09-10 09:17:48.168 [http-nio-8080-exec-4] DEBUG c.b.d.myo2o.dao.LocalAuthDao.queryByUserNameAndPwd - ==> Parameters: test(String), password(String)
+2018-09-10 09:17:48.169 [http-nio-8080-exec-4] DEBUG c.b.d.myo2o.dao.LocalAuthDao.queryByUserNameAndPwd - <==      Total: 0
+2018-09-10 09:18:27.336 [restartedMain] DEBUG com.bob.demo.myo2o.Myo2oApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-10 09:18:40.891 [http-nio-8080-exec-3] DEBUG c.b.d.myo2o.dao.LocalAuthDao.queryByUserNameAndPwd - ==>  Preparing: select `local_auth_id`, `username`, `password`, `create_time`, `last_edit_time`, `person_info_id` from tb_local_auth where username=? and password = ? 
+2018-09-10 09:18:40.893 [http-nio-8080-exec-3] DEBUG c.b.d.myo2o.dao.LocalAuthDao.queryByUserNameAndPwd - ==> Parameters: test(String), 8h5fdd2s8aa778f75f5287fgs558dh88(String)
+2018-09-10 09:18:40.913 [http-nio-8080-exec-3] DEBUG c.b.d.myo2o.dao.LocalAuthDao.queryByUserNameAndPwd - <==      Total: 1
+2018-09-10 09:18:41.162 [http-nio-8080-exec-9] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShop - ==>  Preparing: select s.`shop_id`, s.`shop_name`, s.`shop_desc`, s.`shop_addr`, s.`phone`, s.`shop_img`, s.`priority`, s.`create_time`, s.`last_edit_time`, s.`enable_status`, s.`advice`, a.`area_id`, a.area_name, sc.`shop_category_id`, sc.shop_category_name from tb_shop s, tb_shop_category sc, tb_area a WHERE s.owner_id = ? and s.area_id = a.area_id and s.shop_category_id = sc.shop_category_id order by priority desc limit ?,?; 
+2018-09-10 09:18:41.163 [http-nio-8080-exec-9] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShop - ==> Parameters: 1(Long), 0(Integer), 100(Integer)
+2018-09-10 09:18:41.170 [http-nio-8080-exec-9] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShop - <==      Total: 7
+2018-09-10 09:18:41.171 [http-nio-8080-exec-9] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopCount - ==>  Preparing: select count(1) from tb_shop s, tb_shop_category sc, tb_area a WHERE s.owner_id = ? and s.area_id = a.area_id and s.shop_category_id = sc.shop_category_id 
+2018-09-10 09:18:41.172 [http-nio-8080-exec-9] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopCount - ==> Parameters: 1(Long)
+2018-09-10 09:18:41.175 [http-nio-8080-exec-9] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopCount - <==      Total: 1
+2018-09-10 09:34:30.731 [main] DEBUG com.bob.demo.myo2o.utils.RedisTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-10 09:34:37.626 [main] DEBUG com.bob.demo.myo2o.utils.RedisTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-10 09:44:25.391 [main] DEBUG com.bob.demo.myo2o.utils.RedisTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-10 09:45:50.273 [main] DEBUG com.bob.demo.myo2o.utils.RedisTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-10 09:46:41.974 [main] DEBUG com.bob.demo.myo2o.utils.RedisTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-10 09:51:50.864 [main] DEBUG com.bob.demo.myo2o.utils.RedisTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-10 10:18:47.842 [restartedMain] DEBUG com.bob.demo.myo2o.Myo2oApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-10 10:18:57.593 [http-nio-8080-exec-9] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShop - ==>  Preparing: select s.`shop_id`, s.`shop_name`, s.`shop_desc`, s.`shop_addr`, s.`phone`, s.`shop_img`, s.`priority`, s.`create_time`, s.`last_edit_time`, s.`enable_status`, s.`advice`, a.`area_id`, a.area_name, sc.`shop_category_id`, sc.shop_category_name from tb_shop s, tb_shop_category sc, tb_area a WHERE s.area_id = a.area_id and s.shop_category_id = sc.shop_category_id order by priority desc limit ?,?; 
+2018-09-10 10:18:57.593 [http-nio-8080-exec-10] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT `shop_category_id`, `shop_category_name`, `shop_category_desc`, `shop_category_img`, `priority`, `create_time`, `last_edit_time`, `parent_id` FROM `tb_shop_category` WHERE parent_id is not null order by priority desc 
+2018-09-10 10:18:57.670 [http-nio-8080-exec-9] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShop - ==> Parameters: 0(Integer), 2(Integer)
+2018-09-10 10:18:57.678 [http-nio-8080-exec-10] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
+2018-09-10 10:18:57.703 [http-nio-8080-exec-10] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 4
+2018-09-10 10:18:57.706 [http-nio-8080-exec-9] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShop - <==      Total: 2
+2018-09-10 10:18:57.714 [http-nio-8080-exec-9] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopCount - ==>  Preparing: select count(1) from tb_shop s, tb_shop_category sc, tb_area a WHERE s.area_id = a.area_id and s.shop_category_id = sc.shop_category_id 
+2018-09-10 10:18:57.714 [http-nio-8080-exec-9] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopCount - ==> Parameters: 
+2018-09-10 10:18:57.716 [http-nio-8080-exec-9] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopCount - <==      Total: 1
+2018-09-10 10:18:58.586 [http-nio-8080-exec-10] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==>  Preparing: select * from tb_area order by priority desc 
+2018-09-10 10:18:58.586 [http-nio-8080-exec-10] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==> Parameters: 
+2018-09-10 10:18:58.589 [http-nio-8080-exec-10] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - <==      Total: 3
+2018-09-10 10:19:00.066 [http-nio-8080-exec-6] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShop - ==>  Preparing: select s.`shop_id`, s.`shop_name`, s.`shop_desc`, s.`shop_addr`, s.`phone`, s.`shop_img`, s.`priority`, s.`create_time`, s.`last_edit_time`, s.`enable_status`, s.`advice`, a.`area_id`, a.area_name, sc.`shop_category_id`, sc.shop_category_name from tb_shop s, tb_shop_category sc, tb_area a WHERE s.area_id = ? and s.area_id = a.area_id and s.shop_category_id = sc.shop_category_id order by priority desc limit ?,?; 
+2018-09-10 10:19:00.066 [http-nio-8080-exec-6] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShop - ==> Parameters: 2(Integer), 0(Integer), 2(Integer)
+2018-09-10 10:19:00.069 [http-nio-8080-exec-6] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShop - <==      Total: 2
+2018-09-10 10:19:00.070 [http-nio-8080-exec-6] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopCount - ==>  Preparing: select count(1) from tb_shop s, tb_shop_category sc, tb_area a WHERE s.area_id = ? and s.area_id = a.area_id and s.shop_category_id = sc.shop_category_id 
+2018-09-10 10:19:00.070 [http-nio-8080-exec-6] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopCount - ==> Parameters: 2(Integer)
+2018-09-10 10:19:00.071 [http-nio-8080-exec-6] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopCount - <==      Total: 1
+2018-09-10 10:28:58.767 [restartedMain] DEBUG com.bob.demo.myo2o.Myo2oApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-10 10:29:15.267 [http-nio-8080-exec-2] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT `shop_category_id`, `shop_category_name`, `shop_category_desc`, `shop_category_img`, `priority`, `create_time`, `last_edit_time`, `parent_id` FROM `tb_shop_category` WHERE parent_id is not null order by priority desc 
+2018-09-10 10:29:15.267 [http-nio-8080-exec-5] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShop - ==>  Preparing: select s.`shop_id`, s.`shop_name`, s.`shop_desc`, s.`shop_addr`, s.`phone`, s.`shop_img`, s.`priority`, s.`create_time`, s.`last_edit_time`, s.`enable_status`, s.`advice`, a.`area_id`, a.area_name, sc.`shop_category_id`, sc.shop_category_name from tb_shop s, tb_shop_category sc, tb_area a WHERE s.area_id = a.area_id and s.shop_category_id = sc.shop_category_id order by priority desc limit ?,?; 
+2018-09-10 10:29:15.304 [http-nio-8080-exec-2] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
+2018-09-10 10:29:15.304 [http-nio-8080-exec-5] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShop - ==> Parameters: 0(Integer), 2(Integer)
+2018-09-10 10:29:15.329 [http-nio-8080-exec-5] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShop - <==      Total: 2
+2018-09-10 10:29:15.332 [http-nio-8080-exec-2] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 4
+2018-09-10 10:29:15.339 [http-nio-8080-exec-5] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopCount - ==>  Preparing: select count(1) from tb_shop s, tb_shop_category sc, tb_area a WHERE s.area_id = a.area_id and s.shop_category_id = sc.shop_category_id 
+2018-09-10 10:29:15.340 [http-nio-8080-exec-5] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopCount - ==> Parameters: 
+2018-09-10 10:29:15.342 [http-nio-8080-exec-5] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopCount - <==      Total: 1
+2018-09-10 10:29:16.148 [http-nio-8080-exec-2] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==>  Preparing: select * from tb_area order by priority desc 
+2018-09-10 10:29:16.148 [http-nio-8080-exec-2] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==> Parameters: 
+2018-09-10 10:29:16.151 [http-nio-8080-exec-2] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - <==      Total: 3
+2018-09-10 10:29:26.812 [http-nio-8080-exec-4] DEBUG c.b.d.m.d.HeadLineDao.queryHeadLineListByCondition - ==>  Preparing: select * from tb_head_line where enable_status=? order by priority desc 
+2018-09-10 10:29:26.813 [http-nio-8080-exec-4] DEBUG c.b.d.m.d.HeadLineDao.queryHeadLineListByCondition - ==> Parameters: 1(Integer)
+2018-09-10 10:29:26.818 [http-nio-8080-exec-4] DEBUG c.b.d.m.d.HeadLineDao.queryHeadLineListByCondition - <==      Total: 4
+2018-09-10 10:29:26.819 [http-nio-8080-exec-4] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT `shop_category_id`, `shop_category_name`, `shop_category_desc`, `shop_category_img`, `priority`, `create_time`, `last_edit_time`, `parent_id` FROM `tb_shop_category` WHERE parent_id is null order by priority desc 
+2018-09-10 10:29:26.820 [http-nio-8080-exec-4] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
+2018-09-10 10:29:26.823 [http-nio-8080-exec-4] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 2
+2018-09-10 10:29:38.412 [http-nio-8080-exec-7] DEBUG c.b.d.m.d.HeadLineDao.queryHeadLineListByCondition - ==>  Preparing: select * from tb_head_line where enable_status=? order by priority desc 
+2018-09-10 10:29:38.412 [http-nio-8080-exec-7] DEBUG c.b.d.m.d.HeadLineDao.queryHeadLineListByCondition - ==> Parameters: 1(Integer)
+2018-09-10 10:29:38.416 [http-nio-8080-exec-7] DEBUG c.b.d.m.d.HeadLineDao.queryHeadLineListByCondition - <==      Total: 4
+2018-09-10 10:29:38.416 [http-nio-8080-exec-7] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT `shop_category_id`, `shop_category_name`, `shop_category_desc`, `shop_category_img`, `priority`, `create_time`, `last_edit_time`, `parent_id` FROM `tb_shop_category` WHERE parent_id is null order by priority desc 
+2018-09-10 10:29:38.417 [http-nio-8080-exec-7] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
+2018-09-10 10:29:38.419 [http-nio-8080-exec-7] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 2
+2018-09-10 10:29:40.631 [http-nio-8080-exec-1] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShop - ==>  Preparing: select s.`shop_id`, s.`shop_name`, s.`shop_desc`, s.`shop_addr`, s.`phone`, s.`shop_img`, s.`priority`, s.`create_time`, s.`last_edit_time`, s.`enable_status`, s.`advice`, a.`area_id`, a.area_name, sc.`shop_category_id`, sc.shop_category_name from tb_shop s, tb_shop_category sc, tb_area a WHERE s.area_id = a.area_id and s.shop_category_id = sc.shop_category_id order by priority desc limit ?,?; 
+2018-09-10 10:29:40.632 [http-nio-8080-exec-1] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShop - ==> Parameters: 0(Integer), 2(Integer)
+2018-09-10 10:29:40.637 [http-nio-8080-exec-1] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShop - <==      Total: 2
+2018-09-10 10:29:40.638 [http-nio-8080-exec-1] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopCount - ==>  Preparing: select count(1) from tb_shop s, tb_shop_category sc, tb_area a WHERE s.area_id = a.area_id and s.shop_category_id = sc.shop_category_id 
+2018-09-10 10:29:40.638 [http-nio-8080-exec-1] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopCount - ==> Parameters: 
+2018-09-10 10:29:40.639 [http-nio-8080-exec-1] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopCount - <==      Total: 1
+2018-09-10 10:29:40.644 [http-nio-8080-exec-10] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT `shop_category_id`, `shop_category_name`, `shop_category_desc`, `shop_category_img`, `priority`, `create_time`, `last_edit_time`, `parent_id` FROM `tb_shop_category` WHERE parent_id = ? order by priority desc 
+2018-09-10 10:29:40.645 [http-nio-8080-exec-10] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 1(Long)
+2018-09-10 10:29:40.647 [http-nio-8080-exec-10] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 3
+2018-09-10 10:29:40.649 [http-nio-8080-exec-10] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==>  Preparing: select * from tb_area order by priority desc 
+2018-09-10 10:29:40.649 [http-nio-8080-exec-10] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==> Parameters: 
+2018-09-10 10:29:40.650 [http-nio-8080-exec-10] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - <==      Total: 3
+2018-09-10 10:29:50.175 [http-nio-8080-exec-2] DEBUG c.b.d.m.d.HeadLineDao.queryHeadLineListByCondition - ==>  Preparing: select * from tb_head_line where enable_status=? order by priority desc 
+2018-09-10 10:29:50.177 [http-nio-8080-exec-2] DEBUG c.b.d.m.d.HeadLineDao.queryHeadLineListByCondition - ==> Parameters: 1(Integer)
+2018-09-10 10:29:50.179 [http-nio-8080-exec-2] DEBUG c.b.d.m.d.HeadLineDao.queryHeadLineListByCondition - <==      Total: 4
+2018-09-10 10:29:50.179 [http-nio-8080-exec-2] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT `shop_category_id`, `shop_category_name`, `shop_category_desc`, `shop_category_img`, `priority`, `create_time`, `last_edit_time`, `parent_id` FROM `tb_shop_category` WHERE parent_id is null order by priority desc 
+2018-09-10 10:29:50.180 [http-nio-8080-exec-2] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
+2018-09-10 10:29:50.181 [http-nio-8080-exec-2] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 2
+2018-09-10 10:30:01.709 [http-nio-8080-exec-6] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT `shop_category_id`, `shop_category_name`, `shop_category_desc`, `shop_category_img`, `priority`, `create_time`, `last_edit_time`, `parent_id` FROM `tb_shop_category` WHERE parent_id = ? order by priority desc 
+2018-09-10 10:30:01.710 [http-nio-8080-exec-6] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 1(Long)
+2018-09-10 10:30:01.711 [http-nio-8080-exec-7] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShop - ==>  Preparing: select s.`shop_id`, s.`shop_name`, s.`shop_desc`, s.`shop_addr`, s.`phone`, s.`shop_img`, s.`priority`, s.`create_time`, s.`last_edit_time`, s.`enable_status`, s.`advice`, a.`area_id`, a.area_name, sc.`shop_category_id`, sc.shop_category_name from tb_shop s, tb_shop_category sc, tb_area a WHERE s.area_id = a.area_id and s.shop_category_id = sc.shop_category_id order by priority desc limit ?,?; 
+2018-09-10 10:30:01.712 [http-nio-8080-exec-7] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShop - ==> Parameters: 0(Integer), 2(Integer)
+2018-09-10 10:30:01.714 [http-nio-8080-exec-6] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 3
+2018-09-10 10:30:01.715 [http-nio-8080-exec-7] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShop - <==      Total: 2
+2018-09-10 10:30:01.715 [http-nio-8080-exec-6] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==>  Preparing: select * from tb_area order by priority desc 
+2018-09-10 10:30:01.716 [http-nio-8080-exec-6] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==> Parameters: 
+2018-09-10 10:30:01.717 [http-nio-8080-exec-7] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopCount - ==>  Preparing: select count(1) from tb_shop s, tb_shop_category sc, tb_area a WHERE s.area_id = a.area_id and s.shop_category_id = sc.shop_category_id 
+2018-09-10 10:30:01.717 [http-nio-8080-exec-7] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopCount - ==> Parameters: 
+2018-09-10 10:30:01.717 [http-nio-8080-exec-6] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - <==      Total: 3
+2018-09-10 10:30:01.718 [http-nio-8080-exec-7] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopCount - <==      Total: 1
+2018-09-10 10:30:05.496 [http-nio-8080-exec-9] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT `shop_category_id`, `shop_category_name`, `shop_category_desc`, `shop_category_img`, `priority`, `create_time`, `last_edit_time`, `parent_id` FROM `tb_shop_category` WHERE parent_id = ? order by priority desc 
+2018-09-10 10:30:05.497 [http-nio-8080-exec-9] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 2(Long)
+2018-09-10 10:30:05.498 [http-nio-8080-exec-1] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShop - ==>  Preparing: select s.`shop_id`, s.`shop_name`, s.`shop_desc`, s.`shop_addr`, s.`phone`, s.`shop_img`, s.`priority`, s.`create_time`, s.`last_edit_time`, s.`enable_status`, s.`advice`, a.`area_id`, a.area_name, sc.`shop_category_id`, sc.shop_category_name from tb_shop s, tb_shop_category sc, tb_area a WHERE s.area_id = a.area_id and s.shop_category_id = sc.shop_category_id order by priority desc limit ?,?; 
+2018-09-10 10:30:05.498 [http-nio-8080-exec-9] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 1
+2018-09-10 10:30:05.498 [http-nio-8080-exec-1] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShop - ==> Parameters: 0(Integer), 2(Integer)
+2018-09-10 10:30:05.499 [http-nio-8080-exec-9] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==>  Preparing: select * from tb_area order by priority desc 
+2018-09-10 10:30:05.500 [http-nio-8080-exec-9] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==> Parameters: 
+2018-09-10 10:30:05.503 [http-nio-8080-exec-9] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - <==      Total: 3
+2018-09-10 10:30:05.505 [http-nio-8080-exec-1] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShop - <==      Total: 2
+2018-09-10 10:30:05.506 [http-nio-8080-exec-1] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopCount - ==>  Preparing: select count(1) from tb_shop s, tb_shop_category sc, tb_area a WHERE s.area_id = a.area_id and s.shop_category_id = sc.shop_category_id 
+2018-09-10 10:30:05.509 [http-nio-8080-exec-1] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopCount - ==> Parameters: 
+2018-09-10 10:30:05.512 [http-nio-8080-exec-1] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopCount - <==      Total: 1
+2018-09-10 10:30:09.592 [http-nio-8080-exec-5] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT `shop_category_id`, `shop_category_name`, `shop_category_desc`, `shop_category_img`, `priority`, `create_time`, `last_edit_time`, `parent_id` FROM `tb_shop_category` WHERE parent_id is not null order by priority desc 
+2018-09-10 10:30:09.592 [http-nio-8080-exec-2] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShop - ==>  Preparing: select s.`shop_id`, s.`shop_name`, s.`shop_desc`, s.`shop_addr`, s.`phone`, s.`shop_img`, s.`priority`, s.`create_time`, s.`last_edit_time`, s.`enable_status`, s.`advice`, a.`area_id`, a.area_name, sc.`shop_category_id`, sc.shop_category_name from tb_shop s, tb_shop_category sc, tb_area a WHERE s.area_id = a.area_id and s.shop_category_id = sc.shop_category_id order by priority desc limit ?,?; 
+2018-09-10 10:30:09.592 [http-nio-8080-exec-5] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
+2018-09-10 10:30:09.593 [http-nio-8080-exec-2] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShop - ==> Parameters: 0(Integer), 2(Integer)
+2018-09-10 10:30:09.594 [http-nio-8080-exec-5] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 4
+2018-09-10 10:30:09.595 [http-nio-8080-exec-2] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShop - <==      Total: 2
+2018-09-10 10:30:09.596 [http-nio-8080-exec-5] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==>  Preparing: select * from tb_area order by priority desc 
+2018-09-10 10:30:09.596 [http-nio-8080-exec-5] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==> Parameters: 
+2018-09-10 10:30:09.597 [http-nio-8080-exec-5] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - <==      Total: 3
+2018-09-10 10:30:09.607 [http-nio-8080-exec-2] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopCount - ==>  Preparing: select count(1) from tb_shop s, tb_shop_category sc, tb_area a WHERE s.area_id = a.area_id and s.shop_category_id = sc.shop_category_id 
+2018-09-10 10:30:09.608 [http-nio-8080-exec-2] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopCount - ==> Parameters: 
+2018-09-10 10:30:09.608 [http-nio-8080-exec-2] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopCount - <==      Total: 1
+2018-09-10 10:30:11.356 [http-nio-8080-exec-3] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShop - ==>  Preparing: select s.`shop_id`, s.`shop_name`, s.`shop_desc`, s.`shop_addr`, s.`phone`, s.`shop_img`, s.`priority`, s.`create_time`, s.`last_edit_time`, s.`enable_status`, s.`advice`, a.`area_id`, a.area_name, sc.`shop_category_id`, sc.shop_category_name from tb_shop s, tb_shop_category sc, tb_area a WHERE s.area_id = a.area_id and s.shop_category_id = sc.shop_category_id order by priority desc limit ?,?; 
+2018-09-10 10:30:11.357 [http-nio-8080-exec-3] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShop - ==> Parameters: 2(Integer), 2(Integer)
+2018-09-10 10:30:11.359 [http-nio-8080-exec-3] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShop - <==      Total: 2
+2018-09-10 10:30:11.359 [http-nio-8080-exec-3] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopCount - ==>  Preparing: select count(1) from tb_shop s, tb_shop_category sc, tb_area a WHERE s.area_id = a.area_id and s.shop_category_id = sc.shop_category_id 
+2018-09-10 10:30:11.360 [http-nio-8080-exec-3] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopCount - ==> Parameters: 
+2018-09-10 10:30:11.361 [http-nio-8080-exec-3] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopCount - <==      Total: 1
+2018-09-10 10:33:13.362 [restartedMain] DEBUG com.bob.demo.myo2o.Myo2oApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-10 10:33:27.689 [http-nio-8080-exec-3] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShop - ==>  Preparing: select s.`shop_id`, s.`shop_name`, s.`shop_desc`, s.`shop_addr`, s.`phone`, s.`shop_img`, s.`priority`, s.`create_time`, s.`last_edit_time`, s.`enable_status`, s.`advice`, a.`area_id`, a.area_name, sc.`shop_category_id`, sc.shop_category_name from tb_shop s, tb_shop_category sc, tb_area a WHERE s.area_id = a.area_id and s.shop_category_id = sc.shop_category_id order by priority desc limit ?,?; 
+2018-09-10 10:33:27.725 [http-nio-8080-exec-3] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShop - ==> Parameters: 0(Integer), 2(Integer)
+2018-09-10 10:33:27.747 [http-nio-8080-exec-3] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShop - <==      Total: 2
+2018-09-10 10:33:27.755 [http-nio-8080-exec-3] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopCount - ==>  Preparing: select count(1) from tb_shop s, tb_shop_category sc, tb_area a WHERE s.area_id = a.area_id and s.shop_category_id = sc.shop_category_id 
+2018-09-10 10:33:27.757 [http-nio-8080-exec-3] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopCount - ==> Parameters: 
+2018-09-10 10:33:27.761 [http-nio-8080-exec-3] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopCount - <==      Total: 1
+2018-09-10 10:33:28.254 [http-nio-8080-exec-2] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT `shop_category_id`, `shop_category_name`, `shop_category_desc`, `shop_category_img`, `priority`, `create_time`, `last_edit_time`, `parent_id` FROM `tb_shop_category` WHERE parent_id is not null order by priority desc 
+2018-09-10 10:33:28.254 [http-nio-8080-exec-2] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
+2018-09-10 10:33:28.257 [http-nio-8080-exec-2] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 4
+2018-09-10 10:33:28.272 [http-nio-8080-exec-2] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==>  Preparing: select * from tb_area order by priority desc 
+2018-09-10 10:33:28.272 [http-nio-8080-exec-2] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==> Parameters: 
+2018-09-10 10:33:28.275 [http-nio-8080-exec-2] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - <==      Total: 3
+2018-09-10 10:33:33.112 [http-nio-8080-exec-4] DEBUG c.b.d.m.d.HeadLineDao.queryHeadLineListByCondition - ==>  Preparing: select * from tb_head_line where enable_status=? order by priority desc 
+2018-09-10 10:33:33.113 [http-nio-8080-exec-4] DEBUG c.b.d.m.d.HeadLineDao.queryHeadLineListByCondition - ==> Parameters: 1(Integer)
+2018-09-10 10:33:33.119 [http-nio-8080-exec-4] DEBUG c.b.d.m.d.HeadLineDao.queryHeadLineListByCondition - <==      Total: 4
+2018-09-10 10:33:58.814 [restartedMain] DEBUG com.bob.demo.myo2o.Myo2oApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-10 11:01:40.295 [restartedMain] DEBUG com.bob.demo.myo2o.Myo2oApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-10 11:08:40.524 [restartedMain] DEBUG com.bob.demo.myo2o.Myo2oApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-10 11:09:08.964 [restartedMain] DEBUG com.bob.demo.myo2o.Myo2oApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-10 11:11:11.317 [restartedMain] DEBUG com.bob.demo.myo2o.Myo2oApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-10 11:13:15.248 [restartedMain] DEBUG com.bob.demo.myo2o.Myo2oApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-10 11:16:05.159 [restartedMain] DEBUG com.bob.demo.myo2o.Myo2oApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-10 11:17:19.261 [restartedMain] DEBUG com.bob.demo.myo2o.Myo2oApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-10 11:29:43.112 [restartedMain] DEBUG com.bob.demo.myo2o.Myo2oApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-10 11:29:57.912 [http-nio-8080-exec-3] DEBUG c.b.d.myo2o.dao.LocalAuthDao.queryByUserNameAndPwd - ==>  Preparing: select `local_auth_id`, `username`, `password`, `create_time`, `last_edit_time`, `person_info_id` from tb_local_auth where username=? and password = ? 
+2018-09-10 11:29:57.949 [http-nio-8080-exec-3] DEBUG c.b.d.myo2o.dao.LocalAuthDao.queryByUserNameAndPwd - ==> Parameters: test(String), 8h5fdd2s8aa778f75f5287fgs558dh88(String)
+2018-09-10 11:29:57.971 [http-nio-8080-exec-3] DEBUG c.b.d.myo2o.dao.LocalAuthDao.queryByUserNameAndPwd - <==      Total: 1
+2018-09-10 11:29:58.165 [http-nio-8080-exec-5] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShop - ==>  Preparing: select s.`shop_id`, s.`shop_name`, s.`shop_desc`, s.`shop_addr`, s.`phone`, s.`shop_img`, s.`priority`, s.`create_time`, s.`last_edit_time`, s.`enable_status`, s.`advice`, a.`area_id`, a.area_name, sc.`shop_category_id`, sc.shop_category_name from tb_shop s, tb_shop_category sc, tb_area a WHERE s.owner_id = ? and s.area_id = a.area_id and s.shop_category_id = sc.shop_category_id order by priority desc limit ?,?; 
+2018-09-10 11:29:58.166 [http-nio-8080-exec-5] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShop - ==> Parameters: 1(Long), 0(Integer), 100(Integer)
+2018-09-10 11:29:58.176 [http-nio-8080-exec-5] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShop - <==      Total: 7
+2018-09-10 11:29:58.177 [http-nio-8080-exec-5] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopCount - ==>  Preparing: select count(1) from tb_shop s, tb_shop_category sc, tb_area a WHERE s.owner_id = ? and s.area_id = a.area_id and s.shop_category_id = sc.shop_category_id 
+2018-09-10 11:29:58.177 [http-nio-8080-exec-5] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopCount - ==> Parameters: 1(Long)
+2018-09-10 11:29:58.178 [http-nio-8080-exec-5] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopCount - <==      Total: 1
+2018-09-10 11:30:14.098 [http-nio-8080-exec-7] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShop - ==>  Preparing: select s.`shop_id`, s.`shop_name`, s.`shop_desc`, s.`shop_addr`, s.`phone`, s.`shop_img`, s.`priority`, s.`create_time`, s.`last_edit_time`, s.`enable_status`, s.`advice`, a.`area_id`, a.area_name, sc.`shop_category_id`, sc.shop_category_name from tb_shop s, tb_shop_category sc, tb_area a WHERE s.owner_id = ? and s.area_id = a.area_id and s.shop_category_id = sc.shop_category_id order by priority desc limit ?,?; 
+2018-09-10 11:30:14.098 [http-nio-8080-exec-7] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShop - ==> Parameters: 1(Long), 0(Integer), 100(Integer)
+2018-09-10 11:30:14.104 [http-nio-8080-exec-7] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShop - <==      Total: 7
+2018-09-10 11:30:14.105 [http-nio-8080-exec-7] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopCount - ==>  Preparing: select count(1) from tb_shop s, tb_shop_category sc, tb_area a WHERE s.owner_id = ? and s.area_id = a.area_id and s.shop_category_id = sc.shop_category_id 
+2018-09-10 11:30:14.105 [http-nio-8080-exec-7] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopCount - ==> Parameters: 1(Long)
+2018-09-10 11:30:14.106 [http-nio-8080-exec-7] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopCount - <==      Total: 1
+2018-09-10 11:30:45.895 [restartedMain] DEBUG com.bob.demo.myo2o.Myo2oApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-10 11:31:39.474 [restartedMain] DEBUG com.bob.demo.myo2o.Myo2oApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-10 11:32:21.546 [restartedMain] DEBUG com.bob.demo.myo2o.Myo2oApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-10 11:34:01.303 [restartedMain] DEBUG com.bob.demo.myo2o.Myo2oApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-10 11:34:06.924 [http-nio-8080-exec-2] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShop - ==>  Preparing: select s.`shop_id`, s.`shop_name`, s.`shop_desc`, s.`shop_addr`, s.`phone`, s.`shop_img`, s.`priority`, s.`create_time`, s.`last_edit_time`, s.`enable_status`, s.`advice`, a.`area_id`, a.area_name, sc.`shop_category_id`, sc.shop_category_name from tb_shop s, tb_shop_category sc, tb_area a WHERE s.owner_id = ? and s.area_id = a.area_id and s.shop_category_id = sc.shop_category_id order by priority desc limit ?,?; 
+2018-09-10 11:34:06.996 [http-nio-8080-exec-2] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShop - ==> Parameters: 1(Long), 0(Integer), 100(Integer)
+2018-09-10 11:34:07.020 [http-nio-8080-exec-2] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShop - <==      Total: 7
+2018-09-10 11:34:07.029 [http-nio-8080-exec-2] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopCount - ==>  Preparing: select count(1) from tb_shop s, tb_shop_category sc, tb_area a WHERE s.owner_id = ? and s.area_id = a.area_id and s.shop_category_id = sc.shop_category_id 
+2018-09-10 11:34:07.029 [http-nio-8080-exec-2] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopCount - ==> Parameters: 1(Long)
+2018-09-10 11:34:07.030 [http-nio-8080-exec-2] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopCount - <==      Total: 1
+2018-09-10 11:36:01.799 [restartedMain] DEBUG com.bob.demo.myo2o.Myo2oApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-10 11:36:07.594 [http-nio-8080-exec-9] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShop - ==>  Preparing: select s.`shop_id`, s.`shop_name`, s.`shop_desc`, s.`shop_addr`, s.`phone`, s.`shop_img`, s.`priority`, s.`create_time`, s.`last_edit_time`, s.`enable_status`, s.`advice`, a.`area_id`, a.area_name, sc.`shop_category_id`, sc.shop_category_name from tb_shop s, tb_shop_category sc, tb_area a WHERE s.owner_id = ? and s.area_id = a.area_id and s.shop_category_id = sc.shop_category_id order by priority desc limit ?,?; 
+2018-09-10 11:36:07.595 [http-nio-8080-exec-9] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShop - ==> Parameters: 1(Long), 0(Integer), 100(Integer)
+2018-09-10 11:36:07.611 [http-nio-8080-exec-9] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShop - <==      Total: 7
+2018-09-10 11:36:07.615 [http-nio-8080-exec-9] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopCount - ==>  Preparing: select count(1) from tb_shop s, tb_shop_category sc, tb_area a WHERE s.owner_id = ? and s.area_id = a.area_id and s.shop_category_id = sc.shop_category_id 
+2018-09-10 11:36:07.616 [http-nio-8080-exec-9] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopCount - ==> Parameters: 1(Long)
+2018-09-10 11:36:07.621 [http-nio-8080-exec-9] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopCount - <==      Total: 1
+2018-09-10 11:36:11.628 [http-nio-8080-exec-1] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopById - ==>  Preparing: select s.`shop_id`, s.`shop_name`, s.`shop_desc`, s.`shop_addr`, s.`phone`, s.`shop_img`, s.`priority`, s.`create_time`, s.`last_edit_time`, s.`enable_status`, s.`advice`, a.`area_id`, a.area_name, sc.`shop_category_id`, sc.shop_category_name from tb_shop s, tb_shop_category sc, tb_area a where s.area_id = a.area_id and s.shop_category_id = sc.shop_category_id and s.shop_id = ? order by s.priority desc 
+2018-09-10 11:36:11.629 [http-nio-8080-exec-1] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopById - ==> Parameters: 6(Long)
+2018-09-10 11:36:11.631 [http-nio-8080-exec-1] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopById - <==      Total: 1
+2018-09-10 11:36:12.190 [http-nio-8080-exec-1] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==>  Preparing: select * from tb_area order by priority desc 
+2018-09-10 11:36:12.191 [http-nio-8080-exec-1] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==> Parameters: 
+2018-09-10 11:36:12.193 [http-nio-8080-exec-1] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - <==      Total: 3
+2018-09-10 11:36:12.205 [http-nio-8080-exec-1] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT `shop_category_id`, `shop_category_name`, `shop_category_desc`, `shop_category_img`, `priority`, `create_time`, `last_edit_time`, `parent_id` FROM `tb_shop_category` WHERE parent_id is not null order by priority desc 
+2018-09-10 11:36:12.205 [http-nio-8080-exec-1] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
+2018-09-10 11:36:12.208 [http-nio-8080-exec-1] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 4
+2018-09-10 11:36:18.696 [http-nio-8080-exec-7] DEBUG com.bob.demo.myo2o.dao.ProductDao.queryProduct - ==>  Preparing: SELECT `product_id`, `product_name`, `product_desc`, `product_img`, `normal_price`, `promotion_price`, `priority`, `create_time`, `last_edit_time`, `enable_status`, `product_category_id`, `shop_id` FROM `tb_product` WHERE shop_id = ? order by priority desc limit ?,? 
+2018-09-10 11:36:18.697 [http-nio-8080-exec-7] DEBUG com.bob.demo.myo2o.dao.ProductDao.queryProduct - ==> Parameters: 6(Long), 0(Integer), 100(Integer)
+2018-09-10 11:36:18.701 [http-nio-8080-exec-7] DEBUG com.bob.demo.myo2o.dao.ProductDao.queryProduct - <==      Total: 0
+2018-09-10 11:36:18.701 [http-nio-8080-exec-7] DEBUG c.bob.demo.myo2o.dao.ProductDao.queryProductCount - ==>  Preparing: SELECT count(1) FROM `tb_product` WHERE shop_id = ? 
+2018-09-10 11:36:18.702 [http-nio-8080-exec-7] DEBUG c.bob.demo.myo2o.dao.ProductDao.queryProductCount - ==> Parameters: 6(Long)
+2018-09-10 11:36:18.703 [http-nio-8080-exec-7] DEBUG c.bob.demo.myo2o.dao.ProductDao.queryProductCount - <==      Total: 1
+2018-09-10 11:36:20.785 [http-nio-8080-exec-4] DEBUG c.b.d.myo2o.dao.ProductCategoryDao.queryByShopId - ==>  Preparing: SELECT `product_category_id`, `product_category_name`, `priority`, `create_time`, `shop_id` FROM `tb_product_category` where shop_id = ? order by priority desc 
+2018-09-10 11:36:20.787 [http-nio-8080-exec-4] DEBUG c.b.d.myo2o.dao.ProductCategoryDao.queryByShopId - ==> Parameters: 6(Long)
+2018-09-10 11:36:20.790 [http-nio-8080-exec-4] DEBUG c.b.d.myo2o.dao.ProductCategoryDao.queryByShopId - <==      Total: 2
+2018-09-10 11:36:33.702 [http-nio-8080-exec-1] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopById - ==>  Preparing: select s.`shop_id`, s.`shop_name`, s.`shop_desc`, s.`shop_addr`, s.`phone`, s.`shop_img`, s.`priority`, s.`create_time`, s.`last_edit_time`, s.`enable_status`, s.`advice`, a.`area_id`, a.area_name, sc.`shop_category_id`, sc.shop_category_name from tb_shop s, tb_shop_category sc, tb_area a where s.area_id = a.area_id and s.shop_category_id = sc.shop_category_id and s.shop_id = ? order by s.priority desc 
+2018-09-10 11:36:33.702 [http-nio-8080-exec-1] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopById - ==> Parameters: 6(Long)
+2018-09-10 11:36:33.704 [http-nio-8080-exec-1] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopById - <==      Total: 1
+2018-09-10 11:36:33.705 [http-nio-8080-exec-1] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==>  Preparing: select * from tb_area order by priority desc 
+2018-09-10 11:36:33.705 [http-nio-8080-exec-1] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==> Parameters: 
+2018-09-10 11:36:33.707 [http-nio-8080-exec-1] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - <==      Total: 3
+2018-09-10 11:36:33.712 [http-nio-8080-exec-1] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT `shop_category_id`, `shop_category_name`, `shop_category_desc`, `shop_category_img`, `priority`, `create_time`, `last_edit_time`, `parent_id` FROM `tb_shop_category` WHERE parent_id is not null order by priority desc 
+2018-09-10 11:36:33.712 [http-nio-8080-exec-1] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
+2018-09-10 11:36:33.716 [http-nio-8080-exec-1] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 4
+2018-09-10 11:36:49.785 [http-nio-8080-exec-8] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopById - ==>  Preparing: select s.`shop_id`, s.`shop_name`, s.`shop_desc`, s.`shop_addr`, s.`phone`, s.`shop_img`, s.`priority`, s.`create_time`, s.`last_edit_time`, s.`enable_status`, s.`advice`, a.`area_id`, a.area_name, sc.`shop_category_id`, sc.shop_category_name from tb_shop s, tb_shop_category sc, tb_area a where s.area_id = a.area_id and s.shop_category_id = sc.shop_category_id and s.shop_id = ? order by s.priority desc 
+2018-09-10 11:36:49.786 [http-nio-8080-exec-8] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopById - ==> Parameters: 6(Long)
+2018-09-10 11:36:49.788 [http-nio-8080-exec-8] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopById - <==      Total: 1
+2018-09-10 11:36:49.790 [http-nio-8080-exec-8] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==>  Preparing: select * from tb_area order by priority desc 
+2018-09-10 11:36:49.790 [http-nio-8080-exec-8] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==> Parameters: 
+2018-09-10 11:36:49.792 [http-nio-8080-exec-8] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - <==      Total: 3
+2018-09-10 11:36:49.797 [http-nio-8080-exec-8] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT `shop_category_id`, `shop_category_name`, `shop_category_desc`, `shop_category_img`, `priority`, `create_time`, `last_edit_time`, `parent_id` FROM `tb_shop_category` WHERE parent_id is not null order by priority desc 
+2018-09-10 11:36:49.798 [http-nio-8080-exec-8] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
+2018-09-10 11:36:49.801 [http-nio-8080-exec-8] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 4
+2018-09-10 11:37:09.935 [http-nio-8080-exec-4] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopById - ==>  Preparing: select s.`shop_id`, s.`shop_name`, s.`shop_desc`, s.`shop_addr`, s.`phone`, s.`shop_img`, s.`priority`, s.`create_time`, s.`last_edit_time`, s.`enable_status`, s.`advice`, a.`area_id`, a.area_name, sc.`shop_category_id`, sc.shop_category_name from tb_shop s, tb_shop_category sc, tb_area a where s.area_id = a.area_id and s.shop_category_id = sc.shop_category_id and s.shop_id = ? order by s.priority desc 
+2018-09-10 11:37:09.935 [http-nio-8080-exec-4] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopById - ==> Parameters: 6(Long)
+2018-09-10 11:37:09.937 [http-nio-8080-exec-4] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopById - <==      Total: 1
+2018-09-10 11:37:09.940 [http-nio-8080-exec-4] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==>  Preparing: select * from tb_area order by priority desc 
+2018-09-10 11:37:09.940 [http-nio-8080-exec-4] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==> Parameters: 
+2018-09-10 11:37:09.941 [http-nio-8080-exec-4] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - <==      Total: 3
+2018-09-10 11:37:09.943 [http-nio-8080-exec-4] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT `shop_category_id`, `shop_category_name`, `shop_category_desc`, `shop_category_img`, `priority`, `create_time`, `last_edit_time`, `parent_id` FROM `tb_shop_category` WHERE parent_id is not null order by priority desc 
+2018-09-10 11:37:09.943 [http-nio-8080-exec-4] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
+2018-09-10 11:37:09.946 [http-nio-8080-exec-4] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 4
+2018-09-10 11:38:40.072 [http-nio-8080-exec-9] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShop - ==>  Preparing: select s.`shop_id`, s.`shop_name`, s.`shop_desc`, s.`shop_addr`, s.`phone`, s.`shop_img`, s.`priority`, s.`create_time`, s.`last_edit_time`, s.`enable_status`, s.`advice`, a.`area_id`, a.area_name, sc.`shop_category_id`, sc.shop_category_name from tb_shop s, tb_shop_category sc, tb_area a WHERE s.owner_id = ? and s.area_id = a.area_id and s.shop_category_id = sc.shop_category_id order by priority desc limit ?,?; 
+2018-09-10 11:38:40.073 [http-nio-8080-exec-9] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShop - ==> Parameters: 1(Long), 0(Integer), 100(Integer)
+2018-09-10 11:38:40.079 [http-nio-8080-exec-9] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShop - <==      Total: 7
+2018-09-10 11:38:40.079 [http-nio-8080-exec-9] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopCount - ==>  Preparing: select count(1) from tb_shop s, tb_shop_category sc, tb_area a WHERE s.owner_id = ? and s.area_id = a.area_id and s.shop_category_id = sc.shop_category_id 
+2018-09-10 11:38:40.080 [http-nio-8080-exec-9] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopCount - ==> Parameters: 1(Long)
+2018-09-10 11:38:40.080 [http-nio-8080-exec-9] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopCount - <==      Total: 1
+2018-09-10 11:39:28.243 [http-nio-8080-exec-5] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShop - ==>  Preparing: select s.`shop_id`, s.`shop_name`, s.`shop_desc`, s.`shop_addr`, s.`phone`, s.`shop_img`, s.`priority`, s.`create_time`, s.`last_edit_time`, s.`enable_status`, s.`advice`, a.`area_id`, a.area_name, sc.`shop_category_id`, sc.shop_category_name from tb_shop s, tb_shop_category sc, tb_area a WHERE s.owner_id = ? and s.area_id = a.area_id and s.shop_category_id = sc.shop_category_id order by priority desc limit ?,?; 
+2018-09-10 11:39:28.244 [http-nio-8080-exec-5] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShop - ==> Parameters: 1(Long), 0(Integer), 100(Integer)
+2018-09-10 11:39:28.248 [http-nio-8080-exec-5] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShop - <==      Total: 6
+2018-09-10 11:39:28.248 [http-nio-8080-exec-5] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopCount - ==>  Preparing: select count(1) from tb_shop s, tb_shop_category sc, tb_area a WHERE s.owner_id = ? and s.area_id = a.area_id and s.shop_category_id = sc.shop_category_id 
+2018-09-10 11:39:28.248 [http-nio-8080-exec-5] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopCount - ==> Parameters: 1(Long)
+2018-09-10 11:39:28.249 [http-nio-8080-exec-5] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopCount - <==      Total: 1
+2018-09-10 11:40:41.274 [restartedMain] DEBUG com.bob.demo.myo2o.Myo2oApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-10 11:40:48.622 [restartedMain] DEBUG com.bob.demo.myo2o.Myo2oApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-10 11:41:12.168 [http-nio-8080-exec-4] DEBUG c.b.d.myo2o.dao.LocalAuthDao.queryByUserNameAndPwd - ==>  Preparing: select `local_auth_id`, `username`, `password`, `create_time`, `last_edit_time`, `person_info_id` from tb_local_auth where username=? and password = ? 
+2018-09-10 11:41:12.171 [http-nio-8080-exec-4] DEBUG c.b.d.myo2o.dao.LocalAuthDao.queryByUserNameAndPwd - ==> Parameters: test(String), 8h5fdd2s8aa778f75f5287fgs558dh88(String)
+2018-09-10 11:41:12.177 [http-nio-8080-exec-4] DEBUG c.b.d.myo2o.dao.LocalAuthDao.queryByUserNameAndPwd - <==      Total: 1
+2018-09-10 11:41:12.277 [http-nio-8080-exec-6] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShop - ==>  Preparing: select s.`shop_id`, s.`shop_name`, s.`shop_desc`, s.`shop_addr`, s.`phone`, s.`shop_img`, s.`priority`, s.`create_time`, s.`last_edit_time`, s.`enable_status`, s.`advice`, a.`area_id`, a.area_name, sc.`shop_category_id`, sc.shop_category_name from tb_shop s, tb_shop_category sc, tb_area a WHERE s.owner_id = ? and s.area_id = a.area_id and s.shop_category_id = sc.shop_category_id order by priority desc limit ?,?; 
+2018-09-10 11:41:12.279 [http-nio-8080-exec-6] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShop - ==> Parameters: 1(Long), 0(Integer), 100(Integer)
+2018-09-10 11:41:12.292 [http-nio-8080-exec-6] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShop - <==      Total: 6
+2018-09-10 11:41:12.294 [http-nio-8080-exec-6] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopCount - ==>  Preparing: select count(1) from tb_shop s, tb_shop_category sc, tb_area a WHERE s.owner_id = ? and s.area_id = a.area_id and s.shop_category_id = sc.shop_category_id 
+2018-09-10 11:41:12.295 [http-nio-8080-exec-6] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopCount - ==> Parameters: 1(Long)
+2018-09-10 11:41:12.296 [http-nio-8080-exec-6] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopCount - <==      Total: 1
+2018-09-10 11:41:16.687 [http-nio-8080-exec-1] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopById - ==>  Preparing: select s.`shop_id`, s.`shop_name`, s.`shop_desc`, s.`shop_addr`, s.`phone`, s.`shop_img`, s.`priority`, s.`create_time`, s.`last_edit_time`, s.`enable_status`, s.`advice`, a.`area_id`, a.area_name, sc.`shop_category_id`, sc.shop_category_name from tb_shop s, tb_shop_category sc, tb_area a where s.area_id = a.area_id and s.shop_category_id = sc.shop_category_id and s.shop_id = ? order by s.priority desc 
+2018-09-10 11:41:16.687 [http-nio-8080-exec-1] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopById - ==> Parameters: 2(Long)
+2018-09-10 11:41:16.688 [http-nio-8080-exec-1] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopById - <==      Total: 1
+2018-09-10 11:41:16.698 [http-nio-8080-exec-1] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==>  Preparing: select * from tb_area order by priority desc 
+2018-09-10 11:41:16.699 [http-nio-8080-exec-1] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==> Parameters: 
+2018-09-10 11:41:16.700 [http-nio-8080-exec-1] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - <==      Total: 3
+2018-09-10 11:41:16.707 [http-nio-8080-exec-1] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT `shop_category_id`, `shop_category_name`, `shop_category_desc`, `shop_category_img`, `priority`, `create_time`, `last_edit_time`, `parent_id` FROM `tb_shop_category` WHERE parent_id is not null order by priority desc 
+2018-09-10 11:41:16.707 [http-nio-8080-exec-1] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
+2018-09-10 11:41:16.709 [http-nio-8080-exec-1] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 4
+2018-09-10 11:41:18.605 [http-nio-8080-exec-3] DEBUG com.bob.demo.myo2o.dao.ProductDao.queryProduct - ==>  Preparing: SELECT `product_id`, `product_name`, `product_desc`, `product_img`, `normal_price`, `promotion_price`, `priority`, `create_time`, `last_edit_time`, `enable_status`, `product_category_id`, `shop_id` FROM `tb_product` WHERE shop_id = ? order by priority desc limit ?,? 
+2018-09-10 11:41:18.606 [http-nio-8080-exec-3] DEBUG com.bob.demo.myo2o.dao.ProductDao.queryProduct - ==> Parameters: 2(Long), 0(Integer), 100(Integer)
+2018-09-10 11:41:18.610 [http-nio-8080-exec-3] DEBUG com.bob.demo.myo2o.dao.ProductDao.queryProduct - <==      Total: 11
+2018-09-10 11:41:18.610 [http-nio-8080-exec-3] DEBUG c.bob.demo.myo2o.dao.ProductDao.queryProductCount - ==>  Preparing: SELECT count(1) FROM `tb_product` WHERE shop_id = ? 
+2018-09-10 11:41:18.611 [http-nio-8080-exec-3] DEBUG c.bob.demo.myo2o.dao.ProductDao.queryProductCount - ==> Parameters: 2(Long)
+2018-09-10 11:41:18.611 [http-nio-8080-exec-3] DEBUG c.bob.demo.myo2o.dao.ProductDao.queryProductCount - <==      Total: 1
+2018-09-10 11:51:10.182 [restartedMain] DEBUG com.bob.demo.myo2o.Myo2oApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-10 11:51:41.662 [http-nio-8080-exec-9] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShop - ==>  Preparing: select s.`shop_id`, s.`shop_name`, s.`shop_desc`, s.`shop_addr`, s.`phone`, s.`shop_img`, s.`priority`, s.`create_time`, s.`last_edit_time`, s.`enable_status`, s.`advice`, a.`area_id`, a.area_name, sc.`shop_category_id`, sc.shop_category_name from tb_shop s, tb_shop_category sc, tb_area a WHERE s.area_id = a.area_id and s.shop_category_id = sc.shop_category_id order by priority desc limit ?,?; 
+2018-09-10 11:51:41.663 [http-nio-8080-exec-10] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT `shop_category_id`, `shop_category_name`, `shop_category_desc`, `shop_category_img`, `priority`, `create_time`, `last_edit_time`, `parent_id` FROM `tb_shop_category` WHERE parent_id is not null order by priority desc 
+2018-09-10 11:51:41.702 [http-nio-8080-exec-10] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
+2018-09-10 11:51:41.704 [http-nio-8080-exec-9] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShop - ==> Parameters: 0(Integer), 2(Integer)
+2018-09-10 11:51:41.738 [http-nio-8080-exec-10] DEBUG c.b.d.myo2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 4
+2018-09-10 11:51:41.741 [http-nio-8080-exec-9] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShop - <==      Total: 2
+2018-09-10 11:51:41.754 [http-nio-8080-exec-9] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopCount - ==>  Preparing: select count(1) from tb_shop s, tb_shop_category sc, tb_area a WHERE s.area_id = a.area_id and s.shop_category_id = sc.shop_category_id 
+2018-09-10 11:51:41.754 [http-nio-8080-exec-9] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopCount - ==> Parameters: 
+2018-09-10 11:51:41.755 [http-nio-8080-exec-9] DEBUG com.bob.demo.myo2o.dao.ShopDao.queryShopCount - <==      Total: 1
+2018-09-10 11:51:42.526 [http-nio-8080-exec-10] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==>  Preparing: select * from tb_area order by priority desc 
+2018-09-10 11:51:42.527 [http-nio-8080-exec-10] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - ==> Parameters: 
+2018-09-10 11:51:42.529 [http-nio-8080-exec-10] DEBUG com.bob.demo.myo2o.dao.AreaDao.queryAreaList - <==      Total: 3

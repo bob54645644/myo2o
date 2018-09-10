@@ -2,6 +2,8 @@ package com.bob.demo.myo2o.service.impl;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,6 +22,8 @@ import com.bob.demo.myo2o.service.ProductCategoryService;
  */
 @Service
 public class ProductCategoryServiceImpl implements ProductCategoryService {
+	
+	Logger logger = LoggerFactory.getLogger(ProductCategoryServiceImpl.class);
 
 	@Autowired
 	private ProductCategoryDao productCategoryDao;
@@ -34,14 +38,18 @@ public class ProductCategoryServiceImpl implements ProductCategoryService {
 			try {
 				int effectedNum = productCategoryDao.batchInsertProductCategory(productCategoryList);
 				if (effectedNum <= 0) {
+					logger.error("批量添加productCategory失败");
 					throw new ProductOperationalException("批量添加productCategory失败");
 				} else {
+					logger.debug("批量添加productCategory成功");
 					return new ProductCategoryExecution(ProductCategoryStateEnum.SUCCESS);
 				}
 			} catch (Exception e) {
+				logger.error("批量添加productCategory失败");
 				return new ProductCategoryExecution(ProductCategoryStateEnum.INNER_ERROR);
 			}
 		} else {
+			logger.debug("批量添加productCategory,信息为空");
 			return new ProductCategoryExecution(ProductCategoryStateEnum.EMPTY);
 		}
 	}
@@ -55,18 +63,23 @@ public class ProductCategoryServiceImpl implements ProductCategoryService {
 				int effectedNum2 = productDao.updateProductCategoryIdToNull(productCategoryId);
 				//小于0很关键，因为有的product没有关联productcategory
 				if(effectedNum2 <0) {
+					logger.error("删除productCategory关联失败");
 					throw new ProductOperationalException("删除productCategory关联失败");
 				}
 				int effectedNum = productCategoryDao.deleteById(productCategoryId, shopId);
 				if (effectedNum <= 0) {
+					logger.error("删除productCategory失败");
 					throw new ProductOperationalException("删除productCategory失败");
 				} else {
+					logger.debug("添加productCategory成功");
 					return new ProductCategoryExecution(ProductCategoryStateEnum.SUCCESS);
 				}
 			} catch (Exception e) {
+				logger.error("删除productCategory失败");
 				return new ProductCategoryExecution(ProductCategoryStateEnum.INNER_ERROR);
 			}
 		} else {
+			logger.debug("删除productCategory，信息为空");
 			return new ProductCategoryExecution(ProductCategoryStateEnum.EMPTY);
 		}
 	}

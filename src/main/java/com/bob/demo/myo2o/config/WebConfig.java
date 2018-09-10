@@ -10,6 +10,7 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import com.bob.demo.myo2o.interceptors.ShopAdminInterceptor;
+import com.bob.demo.myo2o.interceptors.ShopPermissionInterceptor;
 import com.bob.demo.myo2o.utils.PathUtil;
 import com.google.code.kaptcha.servlet.KaptchaServlet;
 
@@ -24,6 +25,8 @@ public class WebConfig implements WebMvcConfigurer{
 	//拦截器
 	@Autowired
 	private ShopAdminInterceptor shopAdminInterceptor;
+	@Autowired
+	private ShopPermissionInterceptor shopPermissionInterceptor;
 	//验证码
 	@Bean
 	public ServletRegistrationBean<KaptchaServlet> servletRegistrationBean(){
@@ -50,8 +53,15 @@ public class WebConfig implements WebMvcConfigurer{
 
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
+		//拦截未登录
 		registry.addInterceptor(shopAdminInterceptor).addPathPatterns("/shopadmin/**")
 		.excludePathPatterns("/shopadmin/login","/shopadmin/handlelogin");
+		//拦截非法操作店铺
+		registry.addInterceptor(shopPermissionInterceptor).addPathPatterns("/shopadmin/**")
+		.excludePathPatterns("/shopadmin/login","/shopadmin/handlelogin",
+				"/shopadmin/getshoplist","/shopadmin/shoplist",
+				"/shopadmin/registershop","/shopadmin/shopoperational","/shopadmin/registershopinfo",
+				"/shopadmin/shopmanagementinfo","/shopadmin/shopmanagement");
 	}
 	
 }

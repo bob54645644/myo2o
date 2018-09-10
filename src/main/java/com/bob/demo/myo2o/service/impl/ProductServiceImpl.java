@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -28,6 +30,7 @@ import com.bob.demo.myo2o.utils.ThumbnailUtil;
  */
 @Service
 public class ProductServiceImpl implements ProductService {
+	Logger logger = LoggerFactory.getLogger(ProductServiceImpl.class);
 	@Autowired
 	private ProductDao productDao;
 	@Autowired
@@ -48,9 +51,11 @@ public class ProductServiceImpl implements ProductService {
 				product.setEnableStatus(1);
 				int effectedNum = productDao.insertProduct(product);
 				if (effectedNum <= 0) {
+					logger.error("新增product失败");
 					throw new ProductOperationalException("新增product失败");
 				}
 			} catch (Exception e) {
+				logger.error("新增product失败");
 				return new ProductExecution(ProductStateEnum.INNER_ERROR);
 			}
 			// 处理缩略图
@@ -65,9 +70,11 @@ public class ProductServiceImpl implements ProductService {
 				// 更新数据库
 				int effectedNum2 = productDao.updateProduct(product);
 				if (effectedNum2 <= 0) {
+					logger.error("缩略图插入失败!");
 					throw new ProductOperationalException("缩略图插入失败!");
 				}
 			} catch (Exception e) {
+				logger.error("缩略图插入失败!");
 				return new ProductExecution(ProductStateEnum.INNER_ERROR);
 			}
 			// 处理详情图
@@ -89,21 +96,26 @@ public class ProductServiceImpl implements ProductService {
 							imgList.add(productImg);
 						} catch (IOException e) {
 							// TODO Auto-generated catch block
+							logger.error("详情图插入失败");
 							return new ProductExecution(ProductStateEnum.INNER_ERROR);
 						}
 					} else {
+						logger.error("详情图插入失败");
 						return new ProductExecution(ProductStateEnum.EMPTY);
 					}
 				}
 				// 新增到数据库
 				int effectedNum3 = productImgDao.batchInsertProductImg(imgList);
 				if (effectedNum3 <= 0) {
+					logger.error("新增product失败");
 					return new ProductExecution(ProductStateEnum.INNER_ERROR);
 				}
 			}
 		} else {
+			logger.debug("product信息为空");
 			return new ProductExecution(ProductStateEnum.EMPTY);
 		}
+		logger.debug("product新增成功");
 		return new ProductExecution(ProductStateEnum.SUCCESS);
 	}
 
@@ -131,11 +143,13 @@ public class ProductServiceImpl implements ProductService {
 				int count = productDao.queryProductCount(productCondition);
 				return new ProductExecution(ProductStateEnum.SUCCESS, productList, count);
 			} catch (Exception e) {
+				logger.error("页码转换失败");
 				ProductExecution pe = new ProductExecution(ProductStateEnum.INNER_ERROR);
 				pe.setStateInfo(e.getMessage());
 				return pe;
 			}
 		} else {
+			logger.debug("页码信息错误");
 			return new ProductExecution(ProductStateEnum.EMPTY);
 		}
 	}
@@ -162,8 +176,10 @@ public class ProductServiceImpl implements ProductService {
 				try {
 					String relativePath = ThumbnailUtil.generateThumbnail(thumbnail, targetAddr);
 					product.setProductImg(relativePath);
+					logger.debug("修改product缩略图成功");
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
+					logger.error("修改product缩略图失败");
 					ProductExecution pe = new ProductExecution(ProductStateEnum.INNER_ERROR);
 					pe.setStateInfo(e.getMessage());
 					return pe;
@@ -192,17 +208,21 @@ public class ProductServiceImpl implements ProductService {
 							productImg.setProductId(product.getProductId());
 
 							imgList.add(productImg);
+							logger.debug("处理product详情图成功");
 						} catch (IOException e) {
 							// TODO Auto-generated catch block
+							logger.error("修改product详情图失败");
 							return new ProductExecution(ProductStateEnum.INNER_ERROR);
 						}
 					} else {
+						logger.debug("product详情图信息为空");
 						return new ProductExecution(ProductStateEnum.EMPTY);
 					}
 				}
 				//详情图新增到数据库
 				int effectedNum = productImgDao.batchInsertProductImg(imgList);
 				if(effectedNum <=0) {
+					logger.error("修改product详情图失败");
 					return new ProductExecution(ProductStateEnum.INNER_ERROR);
 				}
 			}
@@ -210,12 +230,15 @@ public class ProductServiceImpl implements ProductService {
 			product.setLastEditTime(new Date());
 			int effectedNum2 = productDao.updateProduct(product);
 			if(effectedNum2<=0) {
+				logger.error("修改product失败");
 				return new ProductExecution(ProductStateEnum.INNER_ERROR);
 			}else {
+				logger.debug("修改product成功");
 				return new ProductExecution(ProductStateEnum.SUCCESS);
 			}
 			
 		}else {
+			logger.debug("修改product，信息为空");
 			return new ProductExecution(ProductStateEnum.EMPTY);
 		}
 	}

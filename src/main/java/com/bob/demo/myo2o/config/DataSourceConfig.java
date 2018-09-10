@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import com.bob.demo.myo2o.utils.DESUtil;
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
 /** 
@@ -30,8 +31,8 @@ public class DataSourceConfig {
 	public DataSource dataSource() throws PropertyVetoException {
 		ComboPooledDataSource dataSource = new ComboPooledDataSource();
 		dataSource.setJdbcUrl(jdbcUrl);
-		dataSource.setUser(username);
-		dataSource.setPassword(password);
+		dataSource.setUser(DESUtil.getDecryptString(username));
+		dataSource.setPassword(DESUtil.getDecryptString(password));
 		dataSource.setDriverClass(driver);
 		
 		dataSource.setMaxPoolSize(30);

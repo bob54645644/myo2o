@@ -37,6 +37,7 @@ import com.bob.demo.myo2o.service.ShopCategoryService;
 import com.bob.demo.myo2o.service.ShopService;
 import com.bob.demo.myo2o.utils.HttpServletRequestUtil;
 import com.bob.demo.myo2o.utils.ImageHolder;
+import com.bob.demo.myo2o.utils.MD5Util;
 import com.bob.demo.myo2o.utils.VerifyCodeUtil;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -253,6 +254,10 @@ public class ShopRestController {
 		modelMap.put("shopList", se.getShopList());
 		modelMap.put("count", se.getCount());
 		modelMap.put("username", nowUser.getPersonName());
+		
+		//将shopList添加进session中用于权限验证
+		request.getSession().setAttribute("shopList", se.getShopList());
+		
 		return modelMap;
 	}
 
@@ -400,7 +405,7 @@ public class ShopRestController {
 		String username = HttpServletRequestUtil.getString(request, "username");
 		String password = HttpServletRequestUtil.getString(request, "password");
 		if(username !=null && password !=null) {
-			LocalAuthExecution lae = localAuthService.getLocalAuthByUserNameAndPwd(username, password);
+			LocalAuthExecution lae = localAuthService.getLocalAuthByUserNameAndPwd(username, MD5Util.getMd5(password));
 			if(lae.getState() == LocalAuthStateEnum.SUCCESS.getState()) {
 				PersonInfo user = new PersonInfo();
 				user.setPersonId(lae.getLocalAuth().getPersonInfo().getPersonId());
